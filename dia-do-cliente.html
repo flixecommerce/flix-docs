@@ -804,12 +804,36 @@
   }
   .check-item:last-child{border-bottom:none;}
   .check-item .cbox{
+    appearance:none;
+    -webkit-appearance:none;
     flex-shrink:0;
     width:20px; height:20px;
     border-radius:6px;
     border:2px solid var(--grad-b);
     margin-top:2px;
+    cursor:pointer;
+    position:relative;
+    background:rgba(255,255,255,0.02);
+    transition:none;
   }
+  .check-item .cbox:checked{
+    background:linear-gradient(135deg, var(--grad-a), var(--grad-c));
+    border-color:transparent;
+  }
+  .check-item .cbox:checked::after{
+    content:'✓';
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+    line-height:1;
+  }
+  .check-item.done .ctext{color:var(--ink-mute); text-decoration:line-through; text-decoration-color:rgba(184,169,212,0.5);}
+  .check-item.done .cnote{text-decoration:none;}
   .check-item .ctext{font-size:14.5px; color:var(--ink); line-height:1.5;}
   .check-item .cnote{
     display:block;
@@ -986,35 +1010,35 @@
         <p>Define a estratégia da campanha antes da Fase 1 começar</p>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="content-0">
         <div class="ctext">Lançamento de produto novo ou desconto/promoção? Essa resposta muda a oferta inteira.</div>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="content-1">
         <div class="ctext">Duração da campanha: janela curta (24-48h) ou longa (até 1 semana)?</div>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="content-2">
         <div class="ctext">2 a 3 opções de nome da campanha, já no formato de uma das fórmulas sugeridas.</div>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="content-3">
         <div class="ctext">Quem é o rosto da marca nos vídeos, e disponibilidade nos dias D4, D6, D7 e no Dia D.</div>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="content-4">
         <div class="ctext">Acesso ao grupo VIP ou lista de transmissão (existente, ou a ser criado pra essa campanha).</div>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="content-5">
         <div class="ctext">Quem aprova as peças de conteúdo e em quanto tempo responde.</div>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="content-6">
         <div class="ctext">Orçamento e acesso à conta de anúncios (Meta Ads), pras campanhas de Alcance e Conversão.</div>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="content-7">
         <div class="ctext">Um contato de emergência disponível no Dia D, pra resolver problema técnico rápido.</div>
       </div>
     </div>
@@ -1025,39 +1049,39 @@
         <p>O que a equipe precisa pra configurar tudo na plataforma</p>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="tech-0">
         <div class="ctext">Acesso à plataforma (Bagy, Nuvemshop ou Shopify)<span class="cnote">Geralmente já em posse da Flix, pela implantação ou suporte ativo.</span></div>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="tech-1">
         <div class="ctext">Senha da tela de acesso antecipado, e o horário exato de ativação e desativação.</div>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="tech-2">
         <div class="ctext">Lista final de produtos-âncora, com SKU ou nome exato.</div>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="tech-3">
         <div class="ctext">Texto e valor do cupom, se houver, incluindo se é de uso geral ou restrito.</div>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="tech-4">
         <div class="ctext">Valor ou percentual do desconto de cada produto-âncora<span class="cnote">Os preços originais já estão com a Flix, falta só a definição do desconto.</span></div>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="tech-5">
         <div class="ctext">Estoque real de cada produto-âncora<span class="cnote">A Flix já tem esse dado, mas vale um double-check antes da campanha ir ao ar.</span></div>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="tech-6">
         <div class="ctext">Regra de frete durante a campanha, se houver mudança, com data de início e fim.</div>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="tech-7">
         <div class="ctext">Imagens em alta resolução dos produtos-âncora, separadas das fotos de banner.</div>
       </div>
       <div class="check-item">
-        <div class="cbox"></div>
+        <input type="checkbox" class="cbox" data-key="tech-8">
         <div class="ctext">Data e hora exatas de início e fim da campanha.</div>
       </div>
     </div>
@@ -1619,6 +1643,28 @@
   </div>
  
 </div>
+ 
+<script>
+(function(){
+  var boxes = document.querySelectorAll('.check-item .cbox');
+  boxes.forEach(function(box){
+    var storageKey = 'flix-campanha-checklist-' + box.dataset.key;
+    var item = box.closest('.check-item');
+    try{
+      if(localStorage.getItem(storageKey) === '1'){
+        box.checked = true;
+        item.classList.add('done');
+      }
+    }catch(e){}
+    box.addEventListener('change', function(){
+      item.classList.toggle('done', box.checked);
+      try{
+        localStorage.setItem(storageKey, box.checked ? '1' : '0');
+      }catch(e){}
+    });
+  });
+})();
+</script>
 </body>
 </html>
  
