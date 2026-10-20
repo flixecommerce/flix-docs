@@ -1,0 +1,1025 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendário de novembro: Black Friday e Story Shop | Laços</title>
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #120a1f;
+    --card: #1e1230;
+    --card-2: #241539;
+    --border: #3a2151;
+    --ink: #f5f0ff;
+    --muted: #b3a6cf;
+    --accent: #ff4d8d;
+    --accent-2: #ff8a4c;
+    --accent-soft: rgba(255, 77, 141, 0.12);
+    --ok: #4fd1a5;
+    --grad: linear-gradient(135deg, #ff8a4c 0%, #ff4d8d 100%);
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="light"]) {
+      /* o documento de referência é dark-only; mantém o mesmo tema */
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 85% 45%, rgba(255, 77, 141, 0.10), transparent 55%);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  .logo-row {
+    text-align: center;
+    padding-top: 44px;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .logo .x {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero {
+    text-align: center;
+    padding: 36px 0 36px;
+  }
+  .eyebrow {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+  h1 {
+    font-size: clamp(2rem, 6vw, 2.6rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    font-weight: 700;
+  }
+  .lead {
+    color: var(--muted);
+    font-size: 1rem;
+    margin: 0 auto;
+    max-width: 540px;
+  }
+  nav.pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 28px 0 8px;
+  }
+  nav.pills a {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.74rem;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--card);
+  }
+  nav.pills a:hover { color: var(--ink); border-color: var(--accent); }
+
+  .summary {
+    margin-top: 28px;
+    background: linear-gradient(180deg, #24123a 0%, #1d1030 100%);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px 24px 20px;
+  }
+  .label {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin: 0 0 14px;
+  }
+  .summary ul { list-style: none; margin: 0; padding: 0; }
+  .summary li {
+    position: relative;
+    padding: 0 0 12px 26px;
+    color: var(--ink);
+    font-size: 0.96rem;
+  }
+  .summary li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .summary li b { font-weight: 700; }
+  .summary li:last-child { padding-bottom: 0; }
+
+  section { margin-top: 64px; }
+  h2 {
+    font-size: 1.6rem;
+    letter-spacing: -0.015em;
+    margin: 0 0 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    scroll-margin-top: 20px;
+  }
+  h2 .num {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  h3 {
+    font-size: 1.1rem;
+    margin: 32px 0 10px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .intro {
+    color: var(--muted);
+    font-size: 0.96rem;
+    margin: 0 0 22px;
+    max-width: 640px;
+  }
+  .meta {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.74rem;
+    color: var(--muted);
+    margin: 0 0 14px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .card .ico {
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: var(--grad);
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 700;
+  }
+  .card h4 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+  .card p b, .card p strong { color: var(--ink); font-weight: 700; }
+
+  .phase {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 20px 8px;
+    margin-bottom: 14px;
+  }
+  .phase-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    margin: 0 0 6px;
+  }
+  .phase-head .code {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+  .phase-head h3 {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+  .phase .goal {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0 0 14px;
+  }
+
+  .day {
+    background: var(--card-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px 12px;
+    margin-bottom: 10px;
+  }
+  .day .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .day .date {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .day .title {
+    font-weight: 700;
+    font-size: 0.98rem;
+  }
+  .day .muted-line {
+    color: var(--muted);
+    font-size: 0.86rem;
+    font-style: italic;
+    margin: 0;
+  }
+  .day .ch {
+    margin: 0 0 8px;
+  }
+  .day .ch:last-child { margin-bottom: 0; }
+  .day .ch-label {
+    display: inline-block;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.64rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+  .day .ch-label.vip { color: var(--accent); }
+  .day ul {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 0.9rem;
+    color: var(--ink);
+  }
+  .day li { margin-bottom: 3px; }
+  .day li::marker { color: var(--accent); }
+  .toque {
+    display: inline-block;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--grad);
+    color: #fff;
+    padding: 2px 7px;
+    border-radius: 6px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid rgba(255, 77, 141, 0.35);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 18px 0;
+    color: var(--ink);
+    font-size: 0.92rem;
+  }
+  .callout b { color: var(--accent); }
+  .callout.ok { background: rgba(79, 209, 165, 0.09); border-color: rgba(79, 209, 165, 0.35); }
+  .callout.ok b { color: var(--ok); }
+
+  .cal {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin: 14px 0 10px;
+  }
+  .cal .dow {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    text-align: center;
+    padding: 4px 0;
+  }
+  .cal .c {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    min-height: 58px;
+    padding: 5px 6px;
+    font-size: 0.7rem;
+    color: var(--muted);
+    overflow: hidden;
+  }
+  .cal .c.off { opacity: 0.3; }
+  .cal .c .d {
+    display: block;
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 0.85rem;
+  }
+  .cal .c .t {
+    display: block;
+    margin-top: 4px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.56rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 2px 4px;
+    border-radius: 5px;
+    background: var(--border);
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .cal .c.f1 { border-color: var(--border); }
+  .cal .c.f1 .t { background: var(--border); color: var(--muted); }
+  .cal .c.f2 { border-color: var(--accent); }
+  .cal .c.f2 .t { background: rgba(255, 77, 141, 0.25); color: var(--accent); }
+  .cal .c.bf { border-color: var(--accent); }
+  .cal .c.bf .t { background: var(--accent); color: #fff; }
+  .cal .c.ss { border-color: var(--accent-2); }
+  .cal .c.ss .t { background: var(--accent-2); color: #fff; }
+  .cal .c.loja { border-color: var(--ok); }
+  .cal .c.loja .t { background: rgba(79, 209, 165, 0.2); color: var(--ok); }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 10px 0 0;
+  }
+  .legend i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 10px 0 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  th, td {
+    text-align: left;
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    background: var(--card-2);
+    font-weight: 500;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  .checklist { list-style: none; padding: 0; margin: 0 0 8px; }
+  .checklist li {
+    position: relative;
+    padding: 10px 0 10px 32px;
+    border-bottom: 1px dashed var(--border);
+    color: var(--ink);
+    font-size: 0.94rem;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 14px;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--accent);
+    border-radius: 4px;
+  }
+
+  .err {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.94rem;
+  }
+  .err:last-child { border-bottom: none; }
+  .err .bang {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--grad);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+  }
+  .err b { color: var(--ink); }
+  .err span { color: var(--muted); }
+
+  .closing {
+    margin-top: 72px;
+    text-align: center;
+    padding: 36px 20px;
+    border-top: 1px solid var(--border);
+  }
+  .closing h2 {
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+  .closing p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin: 0 auto;
+    max-width: 460px;
+  }
+  footer {
+    text-align: center;
+    padding: 24px 0 56px;
+    color: var(--muted);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 0 14px; }
+    .summary { padding: 20px 18px 16px; }
+    .card { padding: 16px; }
+    .cal .c { min-height: 50px; padding: 4px; }
+    .cal .c .t { font-size: 0.5rem; }
+    table { font-size: 0.86rem; }
+    th, td { padding: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="logo-row">
+    <div class="logo">Fli<span class="x">X</span></div>
+  </div>
+
+  <header class="hero">
+    <p class="eyebrow">Guia de referência · Campanha de novembro</p>
+    <h1>Calendário de novembro: Black Friday e Story Shop para a Laços</h1>
+    <p class="lead">Duas campanhas, uma inauguração no meio. Cada dia com o que postar no grupo VIP, nos stories e no feed, e o que precisa ser decidido antes de começar.</p>
+
+    <nav class="pills">
+      <a href="#resumo">Resumo</a>
+      <a href="#principios">Princípios fixos</a>
+      <a href="#calendario">Calendário</a>
+      <a href="#envio">O que enviar</a>
+      <a href="#black">Black Friday</a>
+      <a href="#extensao">Extensão</a>
+      <a href="#loja">Loja</a>
+      <a href="#storyshop">Story Shop</a>
+      <a href="#trafego">Tráfego pago</a>
+      <a href="#duracao">Datas</a>
+      <a href="#erros">Erros comuns</a>
+    </nav>
+  </header>
+
+  <div class="summary" id="resumo">
+    <p class="label">📌 Resumo em 30 segundos</p>
+    <ul>
+      <li><b>A antecipação da Black começa em 27/10</b>, em duas fases: 27 a 30/10 só a data; 31/10 a 03/11 nome, mecânica e oferta, revelados um por dia.</li>
+      <li><b>Black Friday da marca:</b> 04/11 a 08/11, com extensão surpresa em 09/11 para VIP e público ao mesmo tempo.</li>
+      <li><b>Loja física:</b> abre entre 13/11 e 20/11. Quanto antes abrir, mais dias de aquecimento para o Story Shop.</li>
+      <li><b>Story Shop:</b> 24 horas com as peças que sobraram. Data = abertura da loja + 7 dias. Se a loja abrir a partir de 23/11, vai para 30/11.</li>
+      <li><b>Grupo VIP recebe conteúdo todos os dias.</b> A informação sempre chega antes do público.</li>
+      <li><b>Dia D:</b> senha VIP às 9h e acesso geral às 12h (sugestões a confirmar).</li>
+      <li><b>Stories usam o grupo como gatilho:</b> o que o VIP viu primeiro vira pista de curiosidade, sempre com CTA para o grupo.</li>
+      <li><b>O site nunca sai do ar.</b> Antes de cada campanha, a capa mostra contagem regressiva e o acesso VIP é por senha.</li>
+    </ul>
+  </div>
+
+  <section id="principios">
+    <h2><span class="num">01</span> Princípios fixos</h2>
+    <p class="intro">Valem pra campanha inteira, do primeiro ao último dia. Volte aqui sempre que tiver dúvida de tom ou conteúdo.</p>
+
+    <div class="card">
+      <div class="ico">🎭</div>
+      <div><h4>A oferta não é a campanha</h4><p>A expectativa vem antes do desconto. O desconto só converte o que a antecipação acumulou.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">🔒</div>
+      <div><h4>Informação de VIP é de mão única</h4><p>O grupo sempre vê primeiro. Stories podem usar o que o VIP já viu como gatilho de curiosidade, <b>mas só como pista</b>: a peça aparece cortada ou borrada, e o conteúdo completo fica no grupo. Todo story de pista tem CTA para o grupo.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">🏷</div>
+      <div><h4>Escassez só com estoque real</h4><p>"Últimas unidades" precisa ser verdade. Se o item não acabou, não se escreve que acabou.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">👤</div>
+      <div><h4>O rosto da marca entra a partir da Fase 2</h4><p>A Emily aparece da Fase 2 em diante, nos momentos estratégicos. Pessoa falando comunica seriedade que arte não comunica.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">🧱</div>
+      <div><h4>Conteúdo de campanha não substitui o normal</h4><p>Uma ou duas peças de campanha por dia, no meio do conteúdo comum. Perfil 100% campanha vira propaganda.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">📆</div>
+      <div><h4>Cada dia tem função diferente</h4><p>Repetir o formato é o motivo número um de story pulado. Trocar o verbo de cada dia: mostrar, provocar, escolher, fechar.</p></div>
+    </div>
+  </section>
+
+  <section id="calendario">
+    <h2><span class="num">02</span> Calendário de novembro</h2>
+    <p class="intro">Outubro e novembro de 2026. Campanhas em laranja, Story Shop em âmbar e inauguração em verde.</p>
+
+    <div class="cal">
+      <div class="dow">Seg</div><div class="dow">Ter</div><div class="dow">Qua</div><div class="dow">Qui</div><div class="dow">Sex</div><div class="dow">Sáb</div><div class="dow">Dom</div>
+
+      <div class="c off"><span class="d">26</span></div>
+      <div class="c f1"><span class="d">27</span><span class="t">Fase 1</span></div>
+      <div class="c f1"><span class="d">28</span><span class="t">Fase 1</span></div>
+      <div class="c f1"><span class="d">29</span><span class="t">Fase 1</span></div>
+      <div class="c f1"><span class="d">30</span><span class="t">Fase 1</span></div>
+      <div class="c f2"><span class="d">31</span><span class="t">Revelação</span></div>
+      <div class="c f2"><span class="d">01</span><span class="t">Revelação</span></div>
+
+      <div class="c f2"><span class="d">02</span><span class="t">Revelação</span></div>
+      <div class="c f2"><span class="d">03</span><span class="t">Revelação</span></div>
+      <div class="c bf"><span class="d">04</span><span class="t">Black 1</span></div>
+      <div class="c bf"><span class="d">05</span><span class="t">Black 2</span></div>
+      <div class="c bf"><span class="d">06</span><span class="t">Black 3</span></div>
+      <div class="c bf"><span class="d">07</span><span class="t">Black 4</span></div>
+      <div class="c bf"><span class="d">08</span><span class="t">Black 5</span></div>
+
+      <div class="c bf"><span class="d">09</span><span class="t">Extensão</span></div>
+      <div class="c"><span class="d">10</span></div>
+      <div class="c"><span class="d">11</span></div>
+      <div class="c"><span class="d">12</span></div>
+      <div class="c loja"><span class="d">13</span><span class="t">Loja</span></div>
+      <div class="c loja"><span class="d">14</span><span class="t">Loja</span></div>
+      <div class="c loja"><span class="d">15</span><span class="t">Loja</span></div>
+
+      <div class="c loja"><span class="d">16</span><span class="t">Loja</span></div>
+      <div class="c loja"><span class="d">17</span><span class="t">Loja</span></div>
+      <div class="c loja"><span class="d">18</span><span class="t">Loja</span></div>
+      <div class="c loja"><span class="d">19</span><span class="t">Loja</span></div>
+      <div class="c loja"><span class="d">20</span><span class="t">Loja</span></div>
+      <div class="c"><span class="d">21</span></div>
+      <div class="c"><span class="d">22</span></div>
+
+      <div class="c"><span class="d">23</span></div>
+      <div class="c"><span class="d">24</span></div>
+      <div class="c"><span class="d">25</span></div>
+      <div class="c"><span class="d">26</span></div>
+      <div class="c ss"><span class="d">27</span><span class="t">BF oficial</span></div>
+      <div class="c"><span class="d">28</span></div>
+      <div class="c"><span class="d">29</span></div>
+
+      <div class="c ss"><span class="d">30</span><span class="t">Story Shop</span></div>
+    </div>
+
+    <div class="legend">
+      <span><i style="background: var(--border);"></i>Fase 1: antecipação muda</span>
+      <span><i style="background: rgba(255, 77, 141, 0.25); border: 1px solid var(--accent);"></i>Fase 2: revelação</span>
+      <span><i style="background: var(--accent);"></i>Black Friday</span>
+      <span><i style="background: var(--accent-2);"></i>Story Shop</span>
+      <span><i style="background: var(--ok);"></i>Loja</span>
+    </div>
+
+    <div class="callout">
+      <b>Story Shop em aberto:</b> se a loja abrir em 20/11, a campanha cai em 27/11, dia da Black Friday oficial, quando a concorrência sobe o custo de anúncio. A decisão é de vocês: manter 27/11 ou ir para 30/11.
+    </div>
+  </section>
+
+  <section id="envio">
+    <h2><span class="num">03</span> O que precisamos que você envie</h2>
+    <h3>Decisões e conteúdo</h3>
+    <ul class="checklist">
+      <li>Oferta da Black Friday: tipo, valor e peças participantes</li>
+      <li>Oferta da extensão de 09/11</li>
+      <li>Valores das iscas: frete grátis (quantos cupons) e brinde (a partir de qual valor)</li>
+      <li>Data exata da inauguração da loja</li>
+      <li>Horário de liberação da senha VIP e do acesso geral em 04/11</li>
+      <li>Quem grava, edita e aprova cada peça, e em que prazo</li>
+    </ul>
+    <h3>Dados técnicos do site</h3>
+    <ul class="checklist">
+      <li>Lista de 20 produtos de capa, com link e foto principal de cada um</li>
+      <li>Regra de acúmulo entre cupom de boas-vindas e desconto da Black</li>
+      <li>Estoque real das peças de capa e das peças de isca</li>
+      <li>Regra de frete para a campanha, com início e fim</li>
+    </ul>
+  </section>
+
+  <section id="black">
+    <h2><span class="num">04</span> Black Friday da marca</h2>
+    <p class="intro">Antecipação em duas fases antes da abertura, e uma terceira com o Dia D e as iscas. Fase 1 é só data. Fase 2 é a revelação, uma camada por dia.</p>
+
+    <div class="phase">
+      <div class="phase-head"><span class="code">Fase 1</span><h3>Antecipação muda · 27/10 a 30/10</h3></div>
+      <p class="goal">Instalar a pergunta "o que vem?". Só a data aparece. Nada de nome, produto ou oferta. Tráfego em alcance e visualização para público frio.</p>
+
+      <div class="day">
+        <div class="top"><span class="date">27/10 · Ter</span><span class="title">D0 · Plantar a semente</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Confirma a data e avisa que esse canal sabe antes do Instagram.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Foto desfocada de algo em preparo. "Dia 04 alguma coisa grande vem por aqui."</li><li>Caixinha: "o que você acha que é?"</li><li>Repost de 2 a 3 respostas.</li><li>CTA para o grupo VIP.</li><li>Gatilho: quem está no grupo já sabe a data. CTA: "entre no grupo para saber antes de todo mundo".</li></ul></div>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">28/10 · Qua</span><span class="title">D1 · Alimentar o boato</span></div>
+        
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Bastidor exclusivo: uma peça sendo escolhida, com a história dela. Pergunta: "qual você imagina nessa cena?"</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Reforço da data.</li><li>Pista visual nova, independente da caixinha.</li><li>Se a caixinha não bombar, a equipe planta respostas.</li><li>CTA do grupo vira conteúdo próprio: por que vale estar lá.</li><li>Gatilho: foto cortada de uma peça que já apareceu no grupo. CTA: "a história completa está lá".</li></ul></div>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">29/10 · Qui</span><span class="title">D2 · Gamificar</span></div>
+        
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Pergunta aberta: "o que você quer ver na Black?". As respostas alimentam o D4 da revelação.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Áudio ou vídeo curto da equipe em tom de segredo.</li><li>Revelar um pedaço pequeno (fração de peça, emoji-pista) e deixar o público completar.</li><li>Quiz sobre a marca, não sobre produto.</li><li>Gatilho: caixinha com a mesma pergunta feita no grupo. CTA: "quem respondeu lá já recebe a primeira pista".</li></ul></div>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">30/10 · Sex</span><span class="title">D3 · Pressão social e fechamento</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>"Amanhã a primeira pista de verdade sai aqui, antes de qualquer lugar."</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Bastidor de preparação: caixas abertas, peças sendo organizadas, post-it "04/11".</li><li>Repost de comentários perguntando o que é. Se ninguém perguntar, a equipe planta.</li><li>Gatilho: "a primeira pista de verdade sai no grupo amanhã". CTA para o grupo.</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Post de fechamento da fase, com a data.</li></ul></div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="code">Fase 2</span><h3>Revelação controlada · 31/10 a 03/11</h3></div>
+      <p class="goal">Envolver o público na decisão e entregar uma camada por dia: nome, depois como funciona, depois a oferta. A Emily aparece a partir daqui.</p>
+
+      <div class="day">
+        <div class="top"><span class="date">31/10 · Sáb</span><span class="title">D4 · A campanha ganha nome</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Tom muda para conversa privada: áudio da Emily pedindo o voto. Só o VIP vota.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Enquete com 2 ou 3 nomes prontos. Sugestões a validar com o cliente: "Semana dos Dez Anos", "Black dos Dez Anos", "Cinco Dias, Dez Anos".</li><li>Primeira aparição da Emily.</li><li>Gatilho: a enquete dos nomes é feita só no grupo. CTA: "o voto é do grupo VIP, entre".</li></ul></div>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">01/11 · Dom</span><span class="title">D5 · Revelação do nome, em três toques</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Meio do dia: o nome vai primeiro para o VIP. "Só quem está aqui sabe disso agora, o resto vê daqui a pouco."</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Início do dia: story de suspense, sem nome.</li><li>Algumas horas depois: story público revela o nome, comemorando com quem votou.</li><li>Gatilho: story público revela o nome, mas o suspense do grupo já deu o recado. CTA: "o que vem depois do nome está no grupo".</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Post com o nome, creditando a votação do grupo.</li></ul></div>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">02/11 · Seg</span><span class="title">D6 · Como funciona, sem dizer quanto</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Define o benefício real. Opção A: acesso antecipado, com a senha liberada antes do público. Opção B: cupom de boas-vindas maior para quem compra primeiro. Podem ser combinadas.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Caixinha com perguntas plantadas pela equipe: entrega, parcelamento, quantidade de peças.</li><li>Respostas em vídeo com a Emily e a equipe.</li><li>Fecha com quantidade, categoria, horário e mecânica. Sem valor.</li><li>Gatilho: a caixinha responde o "como funciona", o benefício completo fica no grupo. CTA: "o benefício é só para quem está lá".</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Carrossel "como funciona", sem valor.</li></ul></div>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">03/11 · Ter</span><span class="title">D7 · A oferta, e só agora</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Recebe a oferta completa antes do Instagram.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Vídeo pessoal da Emily revelando o valor. Não é banner.</li><li>Contagem regressiva para a abertura.</li><li>Gatilho: o vídeo da Emily vai ao ar 1 hora depois do grupo. CTA: "entre agora para garantir a senha".</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Post resumo da semana, com o benefício completo.</li></ul></div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="code">Fase 3</span><h3>Dia D e iscas · 04/11 a 08/11</h3></div>
+      <p class="goal">Acesso VIP primeiro, depois geral. Iscas com limite real de unidades ou de tempo. A oferta é a definida no D7.</p>
+
+      <div class="day">
+        <div class="top"><span class="date">04/11 · Qua, manhã</span><span class="title">Dia D · Abertura VIP</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Senha liberada às 9h (sugestão a confirmar pelo cliente).</li><li>Cupom de boas-vindas exclusivo VIP para a primeira compra no site novo. Regra de acúmulo a definir.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Vídeo da Emily abrindo a senha.</li><li>Gatilho: a senha já saiu no grupo. CTA: "quem está fora ainda pode entrar antes da abertura geral".</li></ul></div>
+        <p class="muted-line">Feed só depois do acesso geral.</p>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">04/11 · Qua, 12h</span><span class="title">Acesso geral</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Repost de quem já comprou, com autorização. Pergunta: "qual peça ainda está na sua lista?"</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Vídeo da Emily mostrando o site abrindo.</li><li>Gatilho: a prova social veio do grupo primeiro. CTA: "mais compras no grupo, entre".</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Carrossel com as peças em oferta, com link direto.</li></ul></div>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">05/11 · Qui</span><span class="title">Isca 1: frete</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>"X cupons de frete grátis, hoje." Com o número real de cupons.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Isca 1 para o público.</li><li>Contador de cupons restantes, com número real.</li><li>Gatilho: os cupons de frete aparecem no grupo 1 hora antes. CTA: "quem está no grupo pega primeiro".</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Peça-âncora com link.</li></ul></div>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">06/11 · Sex</span><span class="title">Prova social</span></div>
+        
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Comprovantes de quem comprou na Black, repostados aqui primeiro (com autorização). Enquete: qual peça foi a mais pedida?</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Comprovantes de clientes, com autorização.</li><li>Caixinha: "qual você levaria?"</li><li>Gatilho: a enquete "peça mais pedida" está no grupo. CTA: "veja o resultado lá".</li></ul></div>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">07/11 · Sáb</span><span class="title">Isca 2: brinde</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>"Brinde para compras a partir de [valor], hoje. Brindes limitados."</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Isca 2 para o público.</li><li>Bastidor da embalagem do brinde.</li><li>Gatilho: o brinde foi anunciado no grupo primeiro. CTA: "entre para saber a regra completa".</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Reel de embalagem.</li></ul></div>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">08/11 · Dom</span><span class="title">Último dia</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Último aviso com o que realmente sobrou.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>"Hoje fecha." Contagem com estoque real.</li><li>Quando um item acabar, mostrar que acabou.</li><li>Gatilho: a lista do que sobrou está no grupo. CTA: "o último aviso é lá".</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Post resumo da Black com o que ainda está disponível.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="extensao">
+    <h2><span class="num">05</span> Extensão surpresa</h2>
+    <p class="intro">Mesmo horário para o grupo VIP e para o público. Oferta definida pelo cliente e aprovada antes do dia.</p>
+    <div class="phase">
+      <div class="phase-head"><span class="code">Extensão</span><h3>09/11 · Seg, horário a definir</h3></div>
+      <div class="day">
+        <div class="top"><span class="date">09/11 · Seg</span><span class="title">A Black não acabou</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>"A Black não acabou." Oferta da extensão no mesmo horário que o público.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Vídeo de Emily com a oferta.</li><li>Contagem até o fim do dia.</li><li>Gatilho: a extensão chega ao grupo e ao público no mesmo horário, então a vantagem é entrar no grupo para não perder o aviso. CTA para o grupo.</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Post com a oferta e o prazo.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="loja">
+    <h2><span class="num">06</span> Inauguração da loja</h2>
+    <p class="intro">Não é campanha. Encerra a comunicação da Black e prepara a do Story Shop. Sem oferta nova.</p>
+    <div class="phase">
+      <div class="phase-head"><span class="code">Fase 4</span><h3>13/11 a 20/11</h3></div>
+      <p class="goal">Quanto antes a loja abrir, mais tempo para aquecer o Story Shop. Esta semana também serve para "desligar" a Black na comunicação e "ligar" a do Story Shop.</p>
+      <div class="day">
+        <div class="top"><span class="date">Dia da abertura</span><span class="title">Abertura</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Convite para conhecer a loja, sem oferta.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Loja abrindo. Emily no atelier.</li><li>"Dez anos."</li><li>Gatilho: o convite para conhecer a loja saiu no grupo. CTA: "quem está lá recebe o endereço e o horário antes".</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Post de inauguração com endereço.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">Demais dias</span><span class="title">Bastidor da loja</span></div>
+        
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Fotos da loja nova, só para o grupo, antes do feed. Pergunta: "qual peça você quer provar?"</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Bastidor da loja.</li><li>Peças novas, se estiverem prontas.</li><li>Gatilho: a foto da loja nova foi para o grupo antes. CTA: "entre para ver a loja primeiro".</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Post de apresentação da loja.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="storyshop">
+    <h2><span class="num">07</span> Story Shop</h2>
+    <p class="intro">24 horas com as peças que sobraram. A antecipação é relativa à data do Story Shop.</p>
+
+    <table>
+      <thead><tr><th>Loja abre em</th><th>Story Shop em</th></tr></thead>
+      <tbody>
+        <tr><td>13/11</td><td>20/11</td></tr>
+        <tr><td>20/11</td><td>27/11 (em aberto, ver calendário)</td></tr>
+        <tr><td>23/11 ou depois</td><td>30/11</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout ok">
+      <b>Antecipação do Story Shop:</b> se a loja abrir em 13/11, a janela de aquecimento é de poucos dias, porque a inauguração ocupa a semana. Quanto antes a loja abrir, mais dias para aquecer esta campanha. Decisão de vocês: antecipação começa antes ou durante a inauguração.
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="code">Fase 1</span><h3>Antecipação · D-5 a D-1</h3></div>
+      <p class="goal">Os dias são relativos ao Story Shop.</p>
+
+      <div class="day">
+        <div class="top"><span class="date">D-5</span><span class="title">Pista sobre as sobras</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>"Vem coisa boa. As peças que sobraram saem primeiro aqui."</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Teaser de caixa de peças, sem preço.</li><li>Caixinha: "qual você acha que sobra?"</li><li>Gatilho: a pista do grupo já falou das sobras. CTA: "a lista sai no grupo".</li></ul></div>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">D-4</span><span class="title">Lista sem preço</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Lista de peças que sobraram, sem preço. Quem está no grupo vê primeiro.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Repost de respostas da caixinha.</li><li>Gatilho: a lista sem preço está no grupo. CTA: "quem está lá vê a lista primeiro".</li></ul></div>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">D-3</span><span class="title">Bastidor</span></div>
+        
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Enquete: "qual peça você acha que sobra?". Quem acertar fica sabendo a lista primeiro.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Emily separando peças.</li><li>Enquete de tamanho.</li><li>Gatilho: a enquete "o que sobra" é do grupo. CTA: "entre para votar".</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Reel de separação das peças.</li></ul></div>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">D-2</span><span class="title">Data e regra</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>"Dia [data], 24 horas. Depois disso, acabou."</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Data e regra de 24 horas.</li><li>Emily: "vai durar um dia".</li><li>Gatilho: a data e a regra de 24 horas saíram no grupo. CTA: "o horário exato chega lá primeiro".</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Post com data e regra.</li></ul></div>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">D-1</span><span class="title">Véspera</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Horário exato de abertura.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Contagem regressiva em texto.</li><li>Gatilho: o horário exato de abertura é do grupo. CTA para o grupo.</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Post "amanhã".</li></ul></div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="code">Fase 2</span><h3>Story Shop · 24 horas</h3></div>
+      <p class="goal">Urgência e escassez só com estoque real.</p>
+
+      <div class="day">
+        <div class="top"><span class="date">Abertura</span><span class="title">VIP primeiro</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Abertura com a lista de peças e preços.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>Cada peça com tamanho e preço.</li><li>Vídeo de Emily: "abriu".</li><li>Gatilho: a lista e os preços saíram no grupo. CTA: "a lista completa está lá".</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Carrossel com as peças.</li></ul></div>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">Ao longo do dia</span><span class="title">Estoque real</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>Aviso de peças que acabaram, com o número real.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>"Acabou" quando o item esgotar.</li><li>Repost de comprovantes, com autorização.</li><li>Gatilho: o aviso de peças esgotadas sai no grupo antes. CTA: "o estoque real atualizado é lá".</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Post quando algum item esgotar.</li></ul></div>
+      </div>
+
+      <div class="day">
+        <div class="top"><span class="date">Fechamento, 24h</span><span class="title">Encerramento</span></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP</span>
+          <ul><li>"Acabou. Obrigada a quem entrou."</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span>
+          <ul><li>"Acabou." Resumo do que vendeu.</li><li>Gatilho: o encerramento veio do grupo primeiro. CTA: "entre no grupo para a próxima".</li></ul></div>
+        <div class="ch"><span class="ch-label">Feed</span>
+          <ul><li>Post de encerramento.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="trafego">
+    <h2><span class="num">08</span> Tráfego pago</h2>
+    <p class="intro">Campanhas de alcance antes de 04/11. Conversão só a partir do acesso geral, às 12h, com o horário sugerido pela Flix e a confirmar pelo cliente.</p>
+
+    <div class="callout">
+      <b>Save the date:</b> campanha de alcance para o público de remarketing. Texto: "Dia 04/11, às 12h, vem aí um benefício." O benefício não aparece com nome ou valor até o D7 (03/11). Sem link para o grupo VIP.
+    </div>
+
+    <table>
+      <thead><tr><th>Período</th><th>Remarketing</th><th>Público frio</th><th>Conversão</th></tr></thead>
+      <tbody>
+        <tr><td>27/10 a 30/10 (Fase 1)</td><td>Save the date: alcance</td><td>Bastidor e marca, levando ao perfil. Objetivo: visualização e alcance</td><td>Desligada</td></tr>
+        <tr><td>31/10 a 02/11 (Fase 2, D4 a D6)</td><td>Criativo acompanha o reveal do dia: nome em votação, nome revelado, como funciona (sem valor)</td><td>Continua levando ao perfil, com o conteúdo do dia</td><td>Desligada</td></tr>
+        <tr><td>03/11 (D7)</td><td>Criativo com a oferta, só depois do post do grupo VIP e do vídeo da Emily</td><td>Mesmo conteúdo, sem oferta</td><td>Desligada até 04/11</td></tr>
+        <tr><td>04/11 (Dia D)</td><td>Conversão a partir de 12h, com a oferta real</td><td>Conversão a partir de 12h</td><td>Ligada a partir de 12h</td></tr>
+        <tr><td>05/11 a 08/11 (iscas)</td><td>Conversão com a isca do dia. Frete e brinde só com número real de cupons</td><td>Conversão com a isca</td><td>Ligada</td></tr>
+        <tr><td>09/11 (extensão)</td><td>Criativo "A Black não acabou"</td><td>Mesmo criativo</td><td>Ligada</td></tr>
+        <tr><td>10/11 a 12/11</td><td>Só quem não comprou, com o criativo da Black</td><td>Desligar</td><td>Reduzida</td></tr>
+        <tr><td>13/11 a 20/11 (loja)</td><td>Fora do escopo</td><td>Decisão pendente</td><td>Desligada</td></tr>
+        <tr><td>Antecipação do Story Shop (D-5 a D-1)</td><td>Save the date: "dia X, 24 horas, vem aí"</td><td>Conteúdo levando ao perfil</td><td>Desligada</td></tr>
+        <tr><td>Dia do Story Shop</td><td>Conversão com as sobras, sempre com estoque real</td><td>Conversão</td><td>Ligada</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Pendências de tráfego e site</h3>
+    <ul class="checklist">
+      <li>Equipe de tráfego: tamanho da base de remarketing e validação da campanha de save the date</li>
+      <li>Equipe de tráfego: orçamento total, verba por fase e CPA aceitável</li>
+      <li>Equipe de site: teste de ponta a ponta do checkout e da senha, antes de 27/10</li>
+      <li>Cliente: confirmar o horário de liberação da senha VIP em 04/11 (sugestão: 9h) e o acesso geral (sugestão: 12h)</li>
+    </ul>
+  </section>
+
+  <section id="duracao">
+    <h2><span class="num">09</span> Datas e regras</h2>
+    <div class="card">
+      <div class="ico">📅</div>
+      <div><h4>Black Friday: 27/10 a 09/11</h4><p>Antecipação de 8 dias (4 de antecipação muda e 4 de revelação), abertura 04/11, extensão 09/11.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">🏬</div>
+      <div><h4>Loja física: 13/11 a 20/11</h4><p>Data a confirmar. Define a data do Story Shop pela regra da tabela.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">⚡</div>
+      <div><h4>Story Shop: 24 horas</h4><p>Data = abertura da loja + 7 dias. Se a loja abrir a partir de 23/11, vai para 30/11.</p></div>
+    </div>
+  </section>
+
+  <section id="erros">
+    <h2><span class="num">10</span> Erros comuns</h2>
+    <div class="err"><div class="bang">!</div><div><b>Urgência falsa.</b> <span>Dizer "acabou" ou "últimas unidades" sem estoque real. A confiança do grupo não volta.</span></div></div>
+    <div class="err"><div class="bang">!</div><div><b>Vazar informação do VIP.</b> <span>Se o público descobre antes, o grupo perde o motivo de existir.</span></div></div>
+    <div class="err"><div class="bang">!</div><div><b>Perfil virar 100% campanha.</b> <span>Conteúdo de campanha precisa conviver com o conteúdo normal.</span></div></div>
+    <div class="err"><div class="bang">!</div><div><b>Site fora do ar de verdade.</b> <span>A capa com contagem precisa estar no ar. Anúncio apontando para página vazia queima verba.</span></div></div>
+    <div class="err"><div class="bang">!</div><div><b>Não testar o site antes.</b> <span>Checkout travando, frete errado ou senha que não libera na hora.</span></div></div>
+  </section>
+
+  <div class="closing">
+    <h2>Dúvidas, a gente conversa</h2>
+    <p>Este planejamento termina no Story Shop. Pós-campanha, feedback das clientes e Natal serão tratados em outro momento.</p>
+  </div>
+
+  <footer>FLIX · DOCUMENTO DE PLANEJAMENTO · LAÇOS · VERSÃO PRELIMINAR</footer>
+
+</div>
+</body>
+</html>
