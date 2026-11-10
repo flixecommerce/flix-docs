@@ -1,0 +1,941 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de lançamento | Emmilly Piana Adornos</title>
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #120a1f;
+    --card: #1e1230;
+    --card-2: #241539;
+    --border: #3a2151;
+    --ink: #f5f0ff;
+    --muted: #b3a6cf;
+    --accent: #ff4d8d;
+    --accent-2: #ff8a4c;
+    --accent-soft: rgba(255, 77, 141, 0.12);
+    --ok: #4fd1a5;
+    --grad: linear-gradient(135deg, #ff8a4c 0%, #ff4d8d 100%);
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="light"]) {
+      /* o documento de referência é dark-only; mantém o mesmo tema */
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 85% 45%, rgba(255, 77, 141, 0.10), transparent 55%);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  .logo-row {
+    text-align: center;
+    padding-top: 44px;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .logo .x {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero {
+    text-align: center;
+    padding: 36px 0 36px;
+  }
+  .eyebrow {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+  h1 {
+    font-size: clamp(2rem, 6vw, 2.6rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    font-weight: 700;
+  }
+  .lead {
+    color: var(--muted);
+    font-size: 1rem;
+    margin: 0 auto;
+    max-width: 540px;
+  }
+  nav.pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 28px 0 8px;
+  }
+  nav.pills a {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.74rem;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--card);
+  }
+  nav.pills a:hover { color: var(--ink); border-color: var(--accent); }
+
+  .summary {
+    margin-top: 28px;
+    background: linear-gradient(180deg, #24123a 0%, #1d1030 100%);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px 24px 20px;
+  }
+  .label {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin: 0 0 14px;
+  }
+  .summary ul { list-style: none; margin: 0; padding: 0; }
+  .summary li {
+    position: relative;
+    padding: 0 0 12px 26px;
+    color: var(--ink);
+    font-size: 0.96rem;
+  }
+  .summary li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .summary li b { font-weight: 700; }
+  .summary li:last-child { padding-bottom: 0; }
+
+  section { margin-top: 64px; }
+  h2 {
+    font-size: 1.6rem;
+    letter-spacing: -0.015em;
+    margin: 0 0 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    scroll-margin-top: 20px;
+  }
+  h2 .num {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  h3 {
+    font-size: 1.1rem;
+    margin: 32px 0 10px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .intro {
+    color: var(--muted);
+    font-size: 0.96rem;
+    margin: 0 0 22px;
+    max-width: 640px;
+  }
+  .meta {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.74rem;
+    color: var(--muted);
+    margin: 0 0 14px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .card .ico {
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: var(--grad);
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 700;
+  }
+  .card h4 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+  .card p b, .card p strong { color: var(--ink); font-weight: 700; }
+
+  .phase {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 20px 8px;
+    margin-bottom: 14px;
+  }
+  .phase-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    margin: 0 0 6px;
+  }
+  .phase-head .code {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+  .phase-head h3 {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+  .phase .goal {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0 0 14px;
+  }
+
+  .day {
+    background: var(--card-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px 12px;
+    margin-bottom: 10px;
+  }
+  .day .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .day .date {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .day .title {
+    font-weight: 700;
+    font-size: 0.98rem;
+  }
+  .day .muted-line {
+    color: var(--muted);
+    font-size: 0.86rem;
+    font-style: italic;
+    margin: 0;
+  }
+  .day .ch {
+    margin: 0 0 8px;
+  }
+  .day .ch:last-child { margin-bottom: 0; }
+  .day .ch-label {
+    display: inline-block;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.64rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+  .day .ch-label.vip { color: var(--accent); }
+  .day ul {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 0.9rem;
+    color: var(--ink);
+  }
+  .day li { margin-bottom: 3px; }
+  .day li::marker { color: var(--accent); }
+  .toque {
+    display: inline-block;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--grad);
+    color: #fff;
+    padding: 2px 7px;
+    border-radius: 6px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid rgba(255, 77, 141, 0.35);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 18px 0;
+    color: var(--ink);
+    font-size: 0.92rem;
+  }
+  .callout b { color: var(--accent); }
+  .callout.ok { background: rgba(79, 209, 165, 0.09); border-color: rgba(79, 209, 165, 0.35); }
+  .callout.ok b { color: var(--ok); }
+
+  .cal {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin: 14px 0 10px;
+  }
+  .cal .dow {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    text-align: center;
+    padding: 4px 0;
+  }
+  .cal .c {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    min-height: 58px;
+    padding: 5px 6px;
+    font-size: 0.7rem;
+    color: var(--muted);
+    overflow: hidden;
+  }
+  .cal .c.off { opacity: 0.3; }
+  .cal .c .d {
+    display: block;
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 0.85rem;
+  }
+  .cal .c .t {
+    display: block;
+    margin-top: 4px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.56rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 2px 4px;
+    border-radius: 5px;
+    background: var(--border);
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .cal .c.f1 { border-color: var(--border); }
+  .cal .c.f1 .t { background: var(--border); color: var(--muted); }
+  .cal .c.f2 { border-color: var(--accent); }
+  .cal .c.f2 .t { background: rgba(255, 77, 141, 0.25); color: var(--accent); }
+  .cal .c.bf { border-color: var(--accent); }
+  .cal .c.bf .t { background: var(--accent); color: #fff; }
+  .cal .c.ss { border-color: var(--accent-2); }
+  .cal .c.ss .t { background: var(--accent-2); color: #fff; }
+  .cal .c.loja { border-color: var(--ok); }
+  .cal .c.loja .t { background: rgba(79, 209, 165, 0.2); color: var(--ok); }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 10px 0 0;
+  }
+  .legend i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 10px 0 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  th, td {
+    text-align: left;
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    background: var(--card-2);
+    font-weight: 500;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  .checklist { list-style: none; padding: 0; margin: 0 0 8px; }
+  .checklist li {
+    position: relative;
+    padding: 10px 0 10px 32px;
+    border-bottom: 1px dashed var(--border);
+    color: var(--ink);
+    font-size: 0.94rem;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 14px;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--accent);
+    border-radius: 4px;
+  }
+
+  .err {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.94rem;
+  }
+  .err:last-child { border-bottom: none; }
+  .err .bang {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--grad);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+  }
+  .err b { color: var(--ink); }
+  .err span { color: var(--muted); }
+
+  .closing {
+    margin-top: 72px;
+    text-align: center;
+    padding: 36px 20px;
+    border-top: 1px solid var(--border);
+  }
+  .closing h2 {
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+  .closing p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin: 0 auto;
+    max-width: 460px;
+  }
+  footer {
+    text-align: center;
+    padding: 24px 0 56px;
+    color: var(--muted);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 0 14px; }
+    .summary { padding: 20px 18px 16px; }
+    .card { padding: 16px; }
+    .cal .c { min-height: 50px; padding: 4px; }
+    .cal .c .t { font-size: 0.5rem; }
+    table { font-size: 0.86rem; }
+    th, td { padding: 10px; }
+  }
+
+  .cal .c.topo { border-color: var(--border); }
+  .cal .c.topo .t { background: var(--border); color: var(--muted); }
+  .cal .c.vem .t { background: rgba(79, 209, 165, 0.2); color: var(--ok); }
+  .cal .c.vem { border-color: var(--ok); }
+  .cal .c.site .t { background: rgba(255, 77, 141, 0.25); color: var(--accent); }
+  .cal .c.site { border-color: var(--accent); }
+  .cal .c.jantar .t { background: var(--accent); color: #fff; }
+  .cal .c.jantar { border-color: var(--accent); }
+
+  .phase.p1 { border-left: 6px solid var(--muted); }
+  .phase.p2 { border-left: 6px solid var(--accent); }
+  .phase.p3 { border-left: 6px solid var(--ok); }
+  .phase.p1 .phase-head, .phase.p2 .phase-head, .phase.p3 .phase-head {
+    padding: 14px 16px;
+    border-radius: 10px;
+    margin: 0 -6px 12px;
+  }
+  .phase.p1 .phase-head { background: rgba(179, 166, 207, 0.14); }
+  .phase.p2 .phase-head { background: rgba(255, 77, 141, 0.16); }
+  .phase.p3 .phase-head { background: rgba(79, 209, 165, 0.16); }
+  .phase.p1 .phase-head .code { color: var(--muted); }
+  .phase.p2 .phase-head .code { color: var(--accent); }
+  .phase.p3 .phase-head .code { color: var(--ok); }
+  .phase.p1 .phase-head h3, .phase.p2 .phase-head h3, .phase.p3 .phase-head h3 { font-size: 1.2rem; }
+  .phase + .phase { margin-top: 44px; }
+  .alert {
+    background: rgba(255, 77, 141, 0.10);
+    border: 2px solid var(--accent);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin: 18px 0 24px;
+  }
+  .alert .label { color: var(--accent); }
+  .alert h3 { margin: 0 0 8px; font-size: 1.15rem; }
+  .alert p { margin: 0 0 10px; font-size: 0.95rem; }
+  .alert ul { margin: 0 0 10px; padding-left: 18px; font-size: 0.92rem; }
+  .alert li { margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="logo-row"><div class="logo">Fli<span class="x">X</span></div></div>
+
+  <header class="hero">
+    <p class="eyebrow">Plano de lançamento · 10/11 a 26/11 de 2026</p>
+    <h1>Emmilly Piana Adornos: da semana de bastidores ao jantar de lançamento</h1>
+    <p class="lead">Três fases: conteúdo de topo de funil com a Emmilly em destaque, a virada para o "vem aí" com a loja física e o site, e o jantar que vira o conteúdo do lançamento.</p>
+    <nav class="pills">
+      <a href="#capacidade">Capacidade</a>
+      <a href="#calendario">Calendário</a>
+      <a href="#posts">Posts dia a dia</a>
+      <a href="#trafego">Tráfego</a>
+      <a href="#vip">Grupo VIP</a>
+      <a href="#jantar">Jantar</a>
+      <a href="#influ">Convidados</a>
+      <a href="#site">Site</a>
+      <a href="#disp">Disponibilidade</a>
+      <a href="#decisoes">Decisões</a>
+      <a href="#futuro">Futuro</a>
+    </nav>
+  </header>
+
+  <div class="summary" id="resumo">
+    <p class="label">📌 Resumo em 30 segundos</p>
+    <ul>
+      <li><b>Capacidade da Flix:</b> até 10 peças por dia útil, e só até o lançamento. Se o cadastro começar hoje, o máximo até 24/11 é 100 peças.</li>
+      <li><b>O cadastro depende da planilha de produtos preenchida corretamente.</b> Sem isso, não começamos.</li>
+      <li><b>Fase 1 (10 a 16/11):</b> conteúdo divertido sobre atelier, peças e produção, com a Emmilly em destaque e collabs com o perfil pessoal dela.</li>
+      <li><b>Fase 2 (17 a 24/11):</b> "vem aí". Primeiro a loja física, depois o site. Intensifica a partir de 21/11. A loja física abre em 25/11.</li>
+      <li><b>Fase 3 (25/11):</b> jantar com o mote "lancei minha marca num jantar com amigas". Site abre ao final do jantar.</li>
+      <li><b>Convidados são conteúdo, com regras.</b> Postam no horário combinado e na própria voz.</li>
+    </ul>
+  </div>
+
+  <section id="capacidade">
+    <h2><span class="num">01</span> Capacidade e decisão</h2>
+    <div class="alert">
+      <p class="label">Ponto de atenção</p>
+      <h3>A Flix cadastra 10 peças por dia útil, e só até o dia do lançamento</h3>
+      <p>O cadastro começa somente quando a planilha de produtos da Flix estiver preenchida corretamente pela marca. Sem planilha correta, o cadastro não inicia, e cada dia de atraso reduz o total que chega ao lançamento.</p>
+      <ul>
+        <li>Dias úteis até 24/11: 10 dias. A equipe da Flix não trabalha em 20/11 (feriado), então esse dia não conta. O dia 25/11 é o jantar e não conta.</li>
+        <li>As 30 primeiras peças são gratuitas. A partir da 31ª, cada peça custa R$4.</li>
+      </ul>
+    </div>
+    <table>
+      <thead><tr><th>Planilha correta até</th><th>Peças prontas em 24/11</th><th>Custo das extras no lançamento</th></tr></thead>
+      <tbody>
+        <tr><td>10/11 (hoje)</td><td>100</td><td>R$ 280</td></tr>
+        <tr><td>11/11</td><td>90</td><td>R$ 240</td></tr>
+        <tr><td>12/11</td><td>80</td><td>R$ 200</td></tr>
+      </tbody>
+    </table>
+    <p class="intro"><b>Para a Emmilly decidir:</b> quantas peças o site abre em 25/11, e quando a planilha fica pronta.</p>
+    <table>
+      <thead><tr><th>Opção</th><th>O que acontece</th><th>Custo no lançamento</th></tr></thead>
+      <tbody>
+        <tr><td>A. Lançar com 30 (recomendada)</td><td>Site abre com 30 peças gratuitas. As demais entram depois, em ondas, cada uma paga ao ser cadastrada.</td><td>Zero</td></tr>
+        <tr><td>B. Lançar com o máximo possível</td><td>Site abre com até 100 peças, se a planilha estiver correta hoje. Pode ter peças sem foto ou prazo se a planilha atrasar.</td><td>Até R$ 280</td></tr>
+      </tbody>
+    </table>
+    <p class="intro">Recomendo a opção A. A lógica de disponibilidade pede poucas peças com estoque limitado, e 100 peças logo no início dispersa essa escassez. As demais peças entram como conteúdo novo a cada onda.</p>
+  </section>
+
+  <section id="calendario">
+    <h2><span class="num">02</span> Calendário</h2>
+    <p class="intro">Novembro de 2026. Topo de funil de 10 a 16/11. Vem aí de 17 a 24/11, com loja física e site. Em 25/11: jantar, loja física aberta e site no ar. Conteúdo do jantar em 26/11.</p>
+    <div class="cal">
+    <div class="dow">Seg</div>
+    <div class="dow">Ter</div>
+    <div class="dow">Qua</div>
+    <div class="dow">Qui</div>
+    <div class="dow">Sex</div>
+    <div class="dow">Sáb</div>
+    <div class="dow">Dom</div>
+    <div class="c off"><span class="d">09</span></div>
+    <div class="c topo"><span class="d">10</span><span class="t">Topo</span></div>
+    <div class="c topo"><span class="d">11</span><span class="t">Topo</span></div>
+    <div class="c topo"><span class="d">12</span><span class="t">Topo</span></div>
+    <div class="c topo"><span class="d">13</span><span class="t">Topo</span></div>
+    <div class="c topo"><span class="d">14</span><span class="t">Topo</span></div>
+    <div class="c topo"><span class="d">15</span><span class="t">Topo</span></div>
+    <div class="c topo"><span class="d">16</span><span class="t">Topo</span></div>
+    <div class="c vem"><span class="d">17</span><span class="t">Vem aí</span></div>
+    <div class="c vem"><span class="d">18</span><span class="t">Loja</span></div>
+    <div class="c vem"><span class="d">19</span><span class="t">Loja</span></div>
+    <div class="c vem"><span class="d">20</span><span class="t">Loja</span></div>
+    <div class="c site"><span class="d">21</span><span class="t">Site</span></div>
+    <div class="c site"><span class="d">22</span><span class="t">Site</span></div>
+    <div class="c site"><span class="d">23</span><span class="t">Site</span></div>
+    <div class="c site"><span class="d">24</span><span class="t">Site</span></div>
+    <div class="c jantar"><span class="d">25</span><span class="t">Jantar</span></div>
+    <div class="c topo"><span class="d">26</span><span class="t">Pós</span></div>
+    <div class="c "><span class="d">27</span></div>
+    <div class="c "><span class="d">28</span></div>
+    <div class="c "><span class="d">29</span></div>
+    </div>
+    <div class="legend">
+      <span><i style="background: var(--border);"></i>Topo de funil</span>
+      <span><i style="background: rgba(79, 209, 165, 0.35);"></i>Vem aí: loja física</span>
+      <span><i style="background: rgba(255, 77, 141, 0.25); border: 1px solid var(--accent);"></i>Vem aí: site</span>
+      <span><i style="background: var(--accent);"></i>Jantar</span>
+    </div>
+  </section>
+
+  <section id="posts">
+    <h2><span class="num">03</span> Posts dia a dia</h2>
+    <p class="intro">O feriado de 20/11 não interrompe o cronograma de posts: o conteúdo segue no dia. A equipe da Flix não trabalha nesse dia. Cada dia tem uma função. Feed, stories e collab com o perfil pessoal da Emmilly. Os dias 1 a 7 são topo de funil; os dias 8 a 15 são a virada e o vem aí; o dia 16 é o jantar.</p>
+
+    <div class="phase p1">
+      <div class="phase-head"><span class="code">Fase 1</span><h3>Topo de funil · dias 1 a 7</h3></div>
+      <p class="goal">Divertido, bastidor, produção. A Emmilly aparece em tudo. Quem assiste precisa conhecer a marca e a pessoa por trás dela.</p>
+      <div class="day">
+        <div class="top"><span class="date">Dia 1 · 10/11 · Ter</span><span class="title">Apresentação</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Reel de 30 segundos: a Emmilly bordando, com a frase "estou criando uma marca".</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Bastidor da mesa de trabalho.</li><li>Caixinha: "qual peça você usaria?"</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Collab, perfil pessoal</span><ul><li>Collab com o perfil da marca, no reel da apresentação.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Boas-vindas da Emmilly, com o motivo de ter criado o grupo</li><li>Teaser nos stories: Recorte da mesa, com CTA para o grupo</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">Dia 2 · 11/11 · Qua</span><span class="title">O tempo de uma peça</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Carrossel: "o que dá para fazer em uma hora de bordado", miçanga por miçanga.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Enquete: "miçanga ou pérola?"</li><li>Vídeo curto do ponto sendo feito.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Esboço da peça da coleção Ori</li><li>Teaser nos stories: Parte do esboço</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">Dia 3 · 12/11 · Qui</span><span class="title">Do croqui à peça</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Carrossel com croqui e peça pronta lado a lado.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Pergunta de bastidor: "o que você quer ver sendo feito?"</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Collab, perfil pessoal</span><ul><li>Collab com outra artista ou parceira da cidade, com foto de bastidor.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Enquete sobre o material da próxima peça</li><li>Teaser nos stories: Pergunta com CTA</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">Dia 4 · 13/11 · Sex</span><span class="title">Dia de produção</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Reel em aceleração do dia de produção, do início ao fim.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Sexta de peça pronta: a Emmilly mostra uma peça finalizada.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Versão longa do vídeo de produção</li><li>Teaser nos stories: Trecho de 5 segundos</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">Dia 5 · 14/11 · Sáb</span><span class="title">A casa que vira ateliê</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Vídeo da varanda transformada em "jardim secreto". Esse formato já teve bom alcance no perfil pessoal dela.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Bastidor do fim de semana no ateliê.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Collab, perfil pessoal</span><ul><li>Collab com o perfil pessoal: a casa, a varanda e as peças.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Texto completo da história da coleção Ori</li><li>Teaser nos stories: Primeira frase do texto</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">Dia 6 · 15/11 · Dom</span><span class="title">A história da coleção</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Post sobre a coleção Ori: o nome significa "tudo que vive em mim".</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Caixinha: "o que você acha que a Ori quer dizer?"</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Primeira foto da peça da fase 2</li><li>Teaser nos stories: Peça em recorte</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">Dia 7 · 16/11 · Seg</span><span class="title">Dez peças, dez histórias</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Carrossel de 10 peças, cada uma com uma frase da história. Sem preço.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Caixinha: "o que você quer saber antes do lançamento?"</li><li>Pista: "amanhã tem novidade".</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Prévia das 10 peças do carrossel, sem preço</li><li>Teaser nos stories: Três das dez peças, em recorte</li></ul></div>
+      </div>
+    </div>
+
+    <div class="phase p2">
+      <div class="phase-head"><span class="code">Fase 2</span><h3>Vem aí · dias 8 a 15</h3></div>
+      <p class="goal">A virada. Primeiro a loja física, depois o site. A Emmilly anuncia, mostra e cria expectativa. Intensifica a partir de 21/11.</p>
+      <div class="day">
+        <div class="top"><span class="date">Dia 8 · 17/11 · Ter</span><span class="title">A virada: vem aí</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Post de anúncio: "vem aí", com a loja física como primeiro passo e o site na sequência.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Vídeo da Emmilly: "vem aí", com a loja física chegando primeiro.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Collab, perfil pessoal</span><ul><li>Collab com o perfil pessoal: o anúncio do vem aí, com a voz dela.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Anúncio da loja física em primeira mão</li><li>Teaser nos stories: Frase "vem aí", com CTA</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">Dia 9 · 18/11 · Qua</span><span class="title">Bastidor da loja</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Foto ou vídeo da loja física sendo preparada.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Vitrine sendo montada, sem revelar as peças principais.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Vitrine montada, com peças ocultas</li><li>Teaser nos stories: Vitrine parcial</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">Dia 10 · 19/11 · Qui</span><span class="title">Contagem da loja</span></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Contagem regressiva para a abertura da loja física, sem preço.</li><li>Caixinha: "qual peça você quer ver na vitrine?"</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Uma peça revelada na vitrine</li><li>Teaser nos stories: Recorte da peça</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">Dia 11 · 20/11 · Sex</span><span class="title">Ateliê no feriado</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Post normal do ateliê, na rotina de sempre.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Bastidor do dia, sem chamada especial.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Bastidor pré-agendado no feriado</li><li>Teaser nos stories: Recorte do bastidor</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">Dia 12 · 21/11 · Sáb</span><span class="title">O site chega</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Reel de navegação no site, sem preço. Início da intensificação.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Print parcial do site, sem preço.</li><li>Contagem regressiva para o jantar.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Print do site, sem preço</li><li>Teaser nos stories: Print cortado</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">Dia 13 · 22/11 · Dom</span><span class="title">Jantar com amigas</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Post com o mote: "lancei minha marca num jantar com amigas".</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Caixinha: "quem quer receber o convite de primeira compra?".</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Collab, perfil pessoal</span><ul><li>Collab com o perfil pessoal, falando do jantar.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Enquete: "qual peça você levaria?"</li><li>Teaser nos stories: Pergunta com CTA</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">Dia 14 · 23/11 · Seg</span><span class="title">A história por trás da peça</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Carrossel: a história de uma peça, do croqui à caixa.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Contagem regressiva para o site.</li><li>Bastidor da lista de convidadas.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>História completa de uma peça</li><li>Teaser nos stories: Primeira linha da história</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">Dia 15 · 24/11 · Ter</span><span class="title">Véspera</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Post "amanhã", com a mesa montada sem revelar as peças.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Bastidor da mesa e do telão, sem revelar as peças.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Horário de abertura do site para o grupo</li><li>Teaser nos stories: "Amanhã. Entre no grupo"</li></ul></div>
+      </div>
+    </div>
+
+    <div class="phase p3">
+      <div class="phase-head"><span class="code">Fase 3</span><h3>Lançamento · dias 16 e 17</h3></div>
+      <p class="goal">O jantar é o conteúdo. O site abre ao final do jantar. O dia seguinte mostra o que aconteceu.</p>
+      <div class="day">
+        <div class="top"><span class="date">Dia 16 · 25/11 · Qua</span><span class="title">Jantar e site no ar</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Post da loja física aberta e do site no ar, ao final do jantar, com link.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Stories do jantar, limitados ao combinado.</li><li>Loja física aberta, com endereço. Link para o site, com o horário de abertura anunciado.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Link de acesso antecipado, 30 minutos antes do público (proposta)</li><li>Teaser nos stories: Recorte da página da loja</li></ul></div>
+        <p class="muted-line">Regras do jantar na seção 06.</p>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">Dia 17 · 26/11 · Qui</span><span class="title">O que aconteceu no jantar</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Reel do jantar, com vídeos autorizados.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Depoimentos das convidadas, com autorização.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Collab, perfil pessoal</span><ul><li>Posts das influenciadoras, identificados como publicidade.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Bastidor das peças que não foram para o público no jantar, com agradecimento</li><li>Teaser nos stories: Recorte da foto de agradecimento</li></ul></div>
+      </div>
+    </div>
+    <p class="muted-line">A partir de 27/11 o plano não está definido. Ele depende do que o site entregar nos dias 25 e 26.</p>
+  </section>
+
+
+  <section id="trafego">
+    <h2><span class="num">04</span> Para a equipe de tráfego</h2>
+    <p class="intro">Anúncios no ar por dia. Os criativos são as publicações já existentes no perfil da marca, direcionando ao próprio perfil. Não há troca diária de criativo. Texto do save the date: "Dia 25/11, às [X] horas".</p>
+    <div class="card">
+      <div class="ico">1</div>
+      <div><h4>Fase 1 · dias 1 a 7 (10/11 a 16/11)</h4><p>Tráfego para o perfil. Objetivo: visitas ao perfil e novos seguidores. Criativo: publicações do perfil, direcionando ao próprio perfil.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">2</div>
+      <div><h4>Fase 2 · dias 8 a 15 (17/11 a 24/11)</h4><p>Os anúncios da fase 1 seguem ativos. Entra o save the date, para preparar o lançamento. Alcance no remarketing: quem visitou o perfil ou assistiu a vídeos.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">3</div>
+      <div><h4>Fase 3 · dias 16 e 17 em diante (25/11 em diante)</h4><p>O tráfego volta a divulgar conteúdo ao perfil. Mantém uma verba pequena nas primeiras campanhas de acesso ao site.</p></div>
+    </div>
+    <table>
+      <thead><tr><th>Dia</th><th>Tráfego para o perfil</th><th>Save the date</th><th>Acesso ao site</th></tr></thead>
+      <tbody>
+        <tr><td>1 · 10/11 Ter</td><td>Ativo</td><td>Não</td><td>Não</td></tr>
+        <tr><td>2 · 11/11 Qua</td><td>Ativo</td><td>Não</td><td>Não</td></tr>
+        <tr><td>3 · 12/11 Qui</td><td>Ativo</td><td>Não</td><td>Não</td></tr>
+        <tr><td>4 · 13/11 Sex</td><td>Ativo</td><td>Não</td><td>Não</td></tr>
+        <tr><td>5 · 14/11 Sáb</td><td>Ativo</td><td>Não</td><td>Não</td></tr>
+        <tr><td>6 · 15/11 Dom</td><td>Ativo</td><td>Não</td><td>Não</td></tr>
+        <tr><td>7 · 16/11 Seg</td><td>Ativo</td><td>Não</td><td>Não</td></tr>
+        <tr><td>8 · 17/11 Ter</td><td>Ativo</td><td>Começa: remarketing, alcance</td><td>Não</td></tr>
+        <tr><td>9 · 18/11 Qua</td><td>Ativo</td><td>Ativo</td><td>Não</td></tr>
+        <tr><td>10 · 19/11 Qui</td><td>Ativo</td><td>Ativo</td><td>Não</td></tr>
+        <tr><td>11 · 20/11 Sex</td><td>Ativo, sem alteração manual (feriado)</td><td>Ativo</td><td>Não</td></tr>
+        <tr><td>12 · 21/11 Sáb</td><td>Ativo</td><td>Ativo</td><td>Não</td></tr>
+        <tr><td>13 · 22/11 Dom</td><td>Ativo</td><td>Ativo</td><td>Não</td></tr>
+        <tr><td>14 · 23/11 Seg</td><td>Ativo</td><td>Ativo</td><td>Não</td></tr>
+        <tr><td>15 · 24/11 Ter</td><td>Ativo</td><td>Último dia</td><td>Não</td></tr>
+        <tr><td>16 · 25/11 Qua</td><td>Ativo</td><td>Encerra com o jantar</td><td>Começa após o jantar, verba pequena</td></tr>
+        <tr><td>17 · 26/11 Qui</td><td>Ativo</td><td>Não</td><td>Ativo, verba pequena</td></tr>
+      </table>
+    <p class="muted-line">A partir de 27/11 o tráfego segue o que o site entregar nos dias 25 e 26. Verba de cada fase: a definir.</p>
+  </section>
+
+
+  <section id="vip">
+    <h2><span class="num">05</span> Grupo VIP</h2>
+    <p class="intro">O grupo VIP é a base de tudo. Ele é criado já, antes do jantar. Quem está no grupo recebe o conteúdo primeiro, e o público é avisado depois. O conteúdo diário do grupo está na seção 03, junto de cada dia. Os conteúdos são sugestões; o final é da Emmilly.</p>
+    <div class="card">
+      <div class="ico">1</div>
+      <div><h4>Criar agora</h4><p>O grupo precisa existir antes de qualquer divulgação. O link entra na bio e nos stories da fase 1, como convite.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">2</div>
+      <div><h4>Primeiras integrantes: convidadas do jantar</h4><p>Entram assim que confirmarem presença. Ser das primeiras faz parte do benefício.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">3</div>
+      <div><h4>O jantar fica fora do grupo</h4><p>O grupo não fala do jantar. O jantar é tratado no canal das convidadas, separado do grupo.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">!</div>
+      <div><h4>O jantar aparece em público</h4><p>Em 25/11 o jantar aparece em stories e feed. Quem não foi convidada vai ver, grupo ou não. Na comunicação pública, sem chamada para o jantar e sem lista de convidadas.</p></div>
+    </div>
+    <p class="muted-line">Antes de prometer a regra de histórico para novas integrantes, confirmar como o WhatsApp mostra as mensagens anteriores para quem entra depois.</p>
+  </section>
+
+  <section id="jantar">
+    <h2><span class="num">06</span> Jantar: mote e regras</h2>
+    <p class="intro">O mote do dia é um só: <b>"lancei minha marca num jantar com amigas".</b> Todo conteúdo do jantar parte dele.</p>
+    <div class="card">
+      <div class="ico">1</div>
+      <div><h4>Horário combinado</h4><p>Convidadas postam no horário combinado, não antes. Isso preserva a surpresa do site e evita que o conteúdo vire ruído.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">2</div>
+      <div><h4>Sem preço e sem peça em detalhe</h4><p>Nada de preço, nada de peça fora da vitrine combinada. O que for mostrado segue o roteiro da Emmilly.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">3</div>
+      <div><h4>Voz própria</h4><p>Cada convidada conta o jantar com as próprias palavras. Nada de texto pronto, e a história é a dela, não a da marca.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">4</div>
+      <div><h4>Conteúdo autorizado</h4><p>Foto ou vídeo de terceiros só com autorização. Quem não autorizou não aparece.</p></div>
+    </div>
+  </section>
+
+  <section id="influ">
+    <h2><span class="num">07</span> Convidados e influenciadoras</h2>
+    <p class="intro">Convidados são conteúdo. Recebem convite com benefício que não é desconto: frete grátis no primeiro pedido, ou presente em compras acima de [valor].</p>
+    <div class="card">
+      <div class="ico">🔗</div>
+      <div><h4>Cupom próprio por pessoa</h4><p>Código rastreável, para medir o retorno e pagar por venda, como combinado.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">🏷</div>
+      <div><h4>Identificação de publicidade</h4><p>Post pago identificado como publicidade, conforme as regras do CONAR.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">🎁</div>
+      <div><h4>Presente no jantar</h4><p>Só para quem compra acima de [valor]. Dar peça a todas tem custo alto com 10 a 15 convidadas.</p></div>
+    </div>
+  </section>
+
+  <section id="site">
+    <h2><span class="num">08</span> Site</h2>
+    <p class="intro">O site está pronto até 25/11, com o teste de 24/11 como portão. Sem o teste aprovado, a abertura não acontece.</p>
+    <ul class="checklist">
+      <li>Peças gratuitas (30 ou a quantidade da opção escolhida) cadastradas com fotos finais</li>
+      <li>Primeira foto de cada peça com fundo branco. Modelo e croqui na galeria</li>
+      <li>Prazo de produção visível em cada peça</li>
+      <li>Peças esgotadas aparecem como "esgotado", com a data da próxima produção</li>
+      <li>Página do processo com o vídeo institucional</li>
+      <li>Política de encomenda e troca, adequada a peça artesanal</li>
+      <li>Teste de checkout, frete, benefício de convite e pagamento no celular até 24/11</li>
+    </ul>
+  </section>
+
+  <section id="disp">
+    <h2><span class="num">09</span> Disponibilidade</h2>
+    <div class="card">
+      <div class="ico">⏳</div>
+      <div><h4>Escassez real</h4><p>O limite é a produção da Emmilly. Peça esgotada sai como esgotada e volta na próxima produção, com data.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">🧵</div>
+      <div><h4>O tempo é o argumento</h4><p>Cada peça é bordada miçanga por miçanga. Isso aparece no conteúdo, na carta da peça e no site.</p></div>
+    </div>
+  </section>
+
+  <section id="decisoes">
+    <h2><span class="num">10</span> Decisões em aberto</h2>
+    <table>
+      <thead><tr><th>Decisão</th><th>Responsável</th><th>Prazo</th></tr></thead>
+      <tbody>
+        <tr><td>Quantas peças o site abre em 25/11 (opção A ou B)</td><td>Emmilly</td><td>11/11</td></tr>
+        <tr><td>Planilha de produtos preenchida corretamente</td><td>Emmilly e equipe</td><td>Hoje, para a opção B</td></tr>
+        <tr><td>Quem absorve o custo do frete grátis do convite</td><td>Emmilly</td><td>11/11</td></tr>
+        <tr><td>Endereço e horário da loja física em 25/11</td><td>Emmilly</td><td>13/11</td></tr>
+        <tr><td>A loja abre no mesmo dia do jantar: o jantar acontece na loja?</td><td>Emmilly e Flix</td><td>13/11</td></tr>
+        <tr><td>Horário de abertura do site ao público em 25/11</td><td>Emmilly</td><td>20/11</td></tr>
+        <tr><td>Quem é a outra artista ou parceira do collab de 12/11</td><td>Emmilly</td><td>12/11</td></tr>
+        <tr><td>Quem é convidado e quem recebe presente no jantar</td><td>Emmilly</td><td>20/11</td></tr>
+        <tr><td>Perfil pessoal configurado para collab</td><td>Emmilly e Flix</td><td>12/11</td></tr>
+        <tr><td>Criar o grupo VIP e publicar o link de convite</td><td>Emmilly e Flix</td><td>11/11</td></tr>
+        <tr><td>Criar o canal separado das convidadas do jantar</td><td>Emmilly e Flix</td><td>13/11</td></tr>
+        <tr><td>Criativos do save the date enviados para a equipe de tráfego, antes da fase 2 (17/11)</td><td>Emmilly</td><td>16/11</td></tr>
+        <tr><td>Hora do save the date (dia 25/11, às [X] horas) e verba de tráfego por fase</td><td>Emmilly e Flix</td><td>13/11</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="futuro">
+    <h2><span class="num">11</span> Ideias para depois do lançamento</h2>
+    <div class="card">
+      <div class="ico">↺</div>
+      <div><h4>Compra devolvida</h4><p>Em uma janela de tempo, uma semana ou um mês, <b>uma</b> compra do período recebe o valor de volta, e as demais recebem um bônus para a próxima compra, campanha ou lançamento de coleção. Antes de rodar, precisa de teto de exposição, análise de margem e análise jurídica, para que a devolução não vire desconto disfarçado.</p></div>
+    </div>
+  </section>
+
+  <div class="closing">
+    <h2>Dúvidas, a gente conversa</h2>
+    <p>Este plano cobre até o jantar e o conteúdo do dia seguinte. Campanhas de presentes e a abertura para lojistas ficam para depois.</p>
+  </div>
+
+  <footer>FLIX · PLANO DE LANÇAMENTO · EMMILLY PIANA ADORNOS · VERSÃO PRELIMINAR</footer>
+
+</div>
+</body>
+</html>
