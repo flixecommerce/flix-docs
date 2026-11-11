@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planejamento Kamari | Flix</title>
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #120a1f;
+    --card: #1e1230;
+    --card-2: #241539;
+    --border: #3a2151;
+    --ink: #f5f0ff;
+    --muted: #b3a6cf;
+    --accent: #ff4d8d;
+    --accent-2: #ff8a4c;
+    --accent-soft: rgba(255, 77, 141, 0.12);
+    --ok: #4fd1a5;
+    --grad: linear-gradient(135deg, #ff8a4c 0%, #ff4d8d 100%);
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="light"]) {
+      /* o documento de referência é dark-only; mantém o mesmo tema */
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 85% 45%, rgba(255, 77, 141, 0.10), transparent 55%);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  .logo-row {
+    text-align: center;
+    padding-top: 44px;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .logo .x {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero {
+    text-align: center;
+    padding: 36px 0 36px;
+  }
+  .eyebrow {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+  h1 {
+    font-size: clamp(2rem, 6vw, 2.6rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    font-weight: 700;
+  }
+  .lead {
+    color: var(--muted);
+    font-size: 1rem;
+    margin: 0 auto;
+    max-width: 540px;
+  }
+  nav.pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 28px 0 8px;
+  }
+  nav.pills a {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.74rem;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--card);
+  }
+  nav.pills a:hover { color: var(--ink); border-color: var(--accent); }
+
+  .summary {
+    margin-top: 28px;
+    background: linear-gradient(180deg, #24123a 0%, #1d1030 100%);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px 24px 20px;
+  }
+  .label {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin: 0 0 14px;
+  }
+  .summary ul { list-style: none; margin: 0; padding: 0; }
+  .summary li {
+    position: relative;
+    padding: 0 0 12px 26px;
+    color: var(--ink);
+    font-size: 0.96rem;
+  }
+  .summary li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .summary li b { font-weight: 700; }
+  .summary li:last-child { padding-bottom: 0; }
+
+  section { margin-top: 64px; }
+  h2 {
+    font-size: 1.6rem;
+    letter-spacing: -0.015em;
+    margin: 0 0 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    scroll-margin-top: 20px;
+  }
+  h2 .num {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  h3 {
+    font-size: 1.1rem;
+    margin: 32px 0 10px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .intro {
+    color: var(--muted);
+    font-size: 0.96rem;
+    margin: 0 0 22px;
+    max-width: 640px;
+  }
+  .meta {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.74rem;
+    color: var(--muted);
+    margin: 0 0 14px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .card .ico {
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: var(--grad);
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 700;
+  }
+  .card h4 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+  .card p b, .card p strong { color: var(--ink); font-weight: 700; }
+
+  .phase {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 20px 8px;
+    margin-bottom: 14px;
+  }
+  .phase-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    margin: 0 0 6px;
+  }
+  .phase-head .code {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+  .phase-head h3 {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+  .phase .goal {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0 0 14px;
+  }
+
+  .day {
+    background: var(--card-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px 12px;
+    margin-bottom: 10px;
+  }
+  .day .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .day .date {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .day .title {
+    font-weight: 700;
+    font-size: 0.98rem;
+  }
+  .day .muted-line {
+    color: var(--muted);
+    font-size: 0.86rem;
+    font-style: italic;
+    margin: 0;
+  }
+  .day .ch {
+    margin: 0 0 8px;
+  }
+  .day .ch:last-child { margin-bottom: 0; }
+  .day .ch-label {
+    display: inline-block;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.64rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+  .day .ch-label.vip { color: var(--accent); }
+  .day ul {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 0.9rem;
+    color: var(--ink);
+  }
+  .day li { margin-bottom: 3px; }
+  .day li::marker { color: var(--accent); }
+  .toque {
+    display: inline-block;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--grad);
+    color: #fff;
+    padding: 2px 7px;
+    border-radius: 6px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid rgba(255, 77, 141, 0.35);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 18px 0;
+    color: var(--ink);
+    font-size: 0.92rem;
+  }
+  .callout b { color: var(--accent); }
+  .callout.ok { background: rgba(79, 209, 165, 0.09); border-color: rgba(79, 209, 165, 0.35); }
+  .callout.ok b { color: var(--ok); }
+
+  .cal {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin: 14px 0 10px;
+  }
+  .cal .dow {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    text-align: center;
+    padding: 4px 0;
+  }
+  .cal .c {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    min-height: 58px;
+    padding: 5px 6px;
+    font-size: 0.7rem;
+    color: var(--muted);
+    overflow: hidden;
+  }
+  .cal .c.off { opacity: 0.3; }
+  .cal .c .d {
+    display: block;
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 0.85rem;
+  }
+  .cal .c .t {
+    display: block;
+    margin-top: 4px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.56rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 2px 4px;
+    border-radius: 5px;
+    background: var(--border);
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .cal .c.f1 { border-color: var(--border); }
+  .cal .c.f1 .t { background: var(--border); color: var(--muted); }
+  .cal .c.f2 { border-color: var(--accent); }
+  .cal .c.f2 .t { background: rgba(255, 77, 141, 0.25); color: var(--accent); }
+  .cal .c.bf { border-color: var(--accent); }
+  .cal .c.bf .t { background: var(--accent); color: #fff; }
+  .cal .c.ss { border-color: var(--accent-2); }
+  .cal .c.ss .t { background: var(--accent-2); color: #fff; }
+  .cal .c.loja { border-color: var(--ok); }
+  .cal .c.loja .t { background: rgba(79, 209, 165, 0.2); color: var(--ok); }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 10px 0 0;
+  }
+  .legend i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 10px 0 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  th, td {
+    text-align: left;
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    background: var(--card-2);
+    font-weight: 500;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  .checklist { list-style: none; padding: 0; margin: 0 0 8px; }
+  .checklist li {
+    position: relative;
+    padding: 10px 0 10px 32px;
+    border-bottom: 1px dashed var(--border);
+    color: var(--ink);
+    font-size: 0.94rem;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 14px;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--accent);
+    border-radius: 4px;
+  }
+
+  .err {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.94rem;
+  }
+  .err:last-child { border-bottom: none; }
+  .err .bang {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--grad);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+  }
+  .err b { color: var(--ink); }
+  .err span { color: var(--muted); }
+
+  .closing {
+    margin-top: 72px;
+    text-align: center;
+    padding: 36px 20px;
+    border-top: 1px solid var(--border);
+  }
+  .closing h2 {
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+  .closing p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin: 0 auto;
+    max-width: 460px;
+  }
+  footer {
+    text-align: center;
+    padding: 24px 0 56px;
+    color: var(--muted);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 0 14px; }
+    .summary { padding: 20px 18px 16px; }
+    .card { padding: 16px; }
+    .cal .c { min-height: 50px; padding: 4px; }
+    .cal .c .t { font-size: 0.5rem; }
+    table { font-size: 0.86rem; }
+    th, td { padding: 10px; }
+  }
+
+  .cal .c.topo { border-color: var(--border); }
+  .cal .c.topo .t { background: var(--border); color: var(--muted); }
+  .cal .c.vem .t { background: rgba(79, 209, 165, 0.2); color: var(--ok); }
+  .cal .c.vem { border-color: var(--ok); }
+  .cal .c.site .t { background: rgba(255, 77, 141, 0.25); color: var(--accent); }
+  .cal .c.site { border-color: var(--accent); }
+  .cal .c.jantar .t { background: var(--accent); color: #fff; }
+  .cal .c.jantar { border-color: var(--accent); }
+
+  .phase.p1 { border-left: 6px solid var(--muted); }
+  .phase.p2 { border-left: 6px solid var(--accent); }
+  .phase.p3 { border-left: 6px solid var(--ok); }
+  .phase.p1 .phase-head, .phase.p2 .phase-head, .phase.p3 .phase-head {
+    padding: 14px 16px;
+    border-radius: 10px;
+    margin: 0 -6px 12px;
+  }
+  .phase.p1 .phase-head { background: rgba(179, 166, 207, 0.14); }
+  .phase.p2 .phase-head { background: rgba(255, 77, 141, 0.16); }
+  .phase.p3 .phase-head { background: rgba(79, 209, 165, 0.16); }
+  .phase.p1 .phase-head .code { color: var(--muted); }
+  .phase.p2 .phase-head .code { color: var(--accent); }
+  .phase.p3 .phase-head .code { color: var(--ok); }
+  .phase.p1 .phase-head h3, .phase.p2 .phase-head h3, .phase.p3 .phase-head h3 { font-size: 1.2rem; }
+  .phase + .phase { margin-top: 44px; }
+  .alert {
+    background: rgba(255, 77, 141, 0.10);
+    border: 2px solid var(--accent);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin: 18px 0 24px;
+  }
+  .alert .label { color: var(--accent); }
+  .alert h3 { margin: 0 0 8px; font-size: 1.15rem; }
+  .alert p { margin: 0 0 10px; font-size: 0.95rem; }
+  .alert ul { margin: 0 0 10px; padding-left: 18px; font-size: 0.92rem; }
+  .alert li { margin-bottom: 4px; }
+
+  .phase.p4 { border-left: 6px solid #ffc857; }
+  .phase.p4 .phase-head { background: rgba(255, 200, 87, 0.16); }
+  .phase.p4 .phase-head .code { color: #ffc857; }
+  .kcal .row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 10px 0; }
+  .kcal .lab { font-family: var(--mono, monospace); font-size: 12px; min-width: 170px; color: var(--muted); }
+  .kchip { display: inline-block; min-width: 62px; text-align: center; padding: 8px 6px; border-radius: 8px; font-size: 13px; }
+  .kchip.k1 { background: rgba(179, 166, 207, 0.18); border: 1px solid var(--muted); }
+  .kchip.k2 { background: rgba(255, 77, 141, 0.2); border: 1px solid var(--accent); }
+  .kchip.k3 { background: rgba(79, 209, 165, 0.18); border: 1px solid var(--ok); }
+  .kchip.k4 { background: rgba(255, 200, 87, 0.2); border: 1px solid #ffc857; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="logo-row"><div class="logo">Fli<span class="x">X</span></div></div>
+
+  <header class="hero">
+    <p class="eyebrow">Planejamento de campanha · 11/11 a 31/12 de 2026</p>
+    <h1>Kamari: antecipação, Black Friday, Story Shop e dezembro</h1>
+    <p class="lead">Quatro fases de conteúdo entre 12/11 e 4/12, mais o mês de dezembro. Cada fase tem a sua cor e cada dia de post aparece separado.</p>
+    <nav class="pills">
+      <a href="#s1">Decisões de hoje</a>
+      <a href="#s2">Calendário</a>
+      <a href="#s3">Fases e posts</a>
+      <a href="#s4">Equipe do site</a>
+      <a href="#s5">Equipe de tráfego</a>
+      <a href="#s6">Dever de casa</a>
+      <a href="#s7">Pontos de atenção</a>
+    </nav>
+  </header>
+
+  <section id="s1">
+    <h2><span class="num">01</span> Decisões de hoje</h2>
+    <p class="intro">Estas decisões travam o restante. Sem elas, a antecipação de 12/11 não tem o que anunciar.</p>
+    <ul class="checklist">
+      <li>☐ Oferta da Black: progressivo de 10%, 20% e 30%. Pix soma mais 5% em cada faixa (15%, 25%, 35%). Fechar a conta de margem. <b>Prazo:</b> 12/11.</li>
+      <li>☐ Confirmar se a oferta vale para o site inteiro. <b>Prazo:</b> 12/11.</li>
+      <li>☐ Cupom de primeira compra removido. <b>Prazo:</b> 11/11.</li>
+      <li>☐ Categoria de 50% off: ocultar. Definir se é hoje ou no dia 18. <b>Prazo:</b> 11/11.</li>
+      <li>☐ Pedido aos fornecedores (novos modelos e reposição). <b>Prazo:</b> 13/11.</li>
+      <li>☐ Google Analytics instalado no site. <b>Prazo:</b> 12/11.</li>
+      <li>☐ Votação no VIP: 2 ou 3 nomes para a campanha (revelado em 15/11). <b>Prazo:</b> 13/11.</li>
+      <li>☐ Votação no VIP: 2 ou 3 modelos com desconto extra e cupom exclusivo. <b>Prazo:</b> 13/11.</li>
+      <li>☐ Senha do acesso antecipado do VIP (proposta: KAMARIVIP, trocada a cada campanha). <b>Prazo:</b> 16/11.</li>
+      <li>☐ Unificar os dois grupos VIP, com migração gradual. <b>Prazo:</b> 13/11.</li>
+      <li>☐ Frete grátis na Black: manter, com a conta de margem. <b>Prazo:</b> 12/11.</li>
+    </ul>
+    <div class="card">
+      <div class="ico">%</div>
+      <div><h4>Sugestão de desconto extra em produtos específicos</h4><p>Votação no VIP entre 3 modelos de estoque médio, fora dos últimos pares. Cupom exclusivo do VIP de 15% nesses modelos, por tempo limitado (14/11 e 15/11). Não soma com o progressivo: vale a faixa maior. Limite de unidades por modelo. Precisa de conta de margem antes de votar.</p></div>
+    </div>
+  <section id="s2">
+    <h2><span class="num">02</span> Calendário</h2>
+    <p class="intro">O calendário é construído pelas fases. Cada cor é uma fase, e cada chip é um dia de post. As fases estão detalhadas na seção 03.</p>
+    <div class="kcal">
+<div class="row"><span class="lab">Fase 1 · antecipação</span><span class="kchip k1">12/11 Qui</span><span class="kchip k1">13/11 Sex</span><span class="kchip k1">14/11 Sáb</span><span class="kchip k1">15/11 Dom</span><span class="kchip k1">16/11 Seg</span><span class="kchip k1">17/11 Ter</span><span class="kchip k1">18/11 Qua</span></div>
+<div class="row"><span class="lab">Fase 2 · Black</span><span class="kchip k2">19/11 Qui</span><span class="kchip k2">20/11 Sex</span><span class="kchip k2">21/11 Sáb</span><span class="kchip k2">22/11 Dom</span><span class="kchip k2">23/11 Seg</span></div>
+<div class="row"><span class="lab">Fase 3 · pós-Black</span><span class="kchip k3">24/11 Ter</span><span class="kchip k3">25/11 Qua</span><span class="kchip k3">26/11 Qui</span><span class="kchip k3">27/11 Sex</span><span class="kchip k3">28/11 Sáb</span><span class="kchip k3">29/11 Dom</span></div>
+<div class="row"><span class="lab">Fase 4 · ressaca e Story Shop</span><span class="kchip k4">30/11 Seg</span><span class="kchip k4">01/12 Ter</span><span class="kchip k4">02/12 Qua</span><span class="kchip k4">03/12 Qui</span><span class="kchip k4">04/12 Sex</span></div>
+    </div>
+    <div class="legend">
+      <span><i style="background: rgba(179, 166, 207, 0.18); border: 1px solid var(--muted);"></i>Antecipação</span>
+      <span><i style="background: rgba(255, 77, 141, 0.2); border: 1px solid var(--accent);"></i>Black Friday</span>
+      <span><i style="background: rgba(79, 209, 165, 0.18); border: 1px solid var(--ok);"></i>Pós-Black</span>
+      <span><i style="background: rgba(255, 200, 87, 0.2); border: 1px solid #ffc857;"></i>Story Shop</span>
+    </div>
+    <div class="card">
+      <div class="ico">!</div>
+      <div><h4>Regra: stories que falam do VIP</h4><p>Sempre que um story falar de algo que acontece no grupo VIP, o CTA chama para entrar no grupo.</p></div>
+    </div>
+  <section id="s3">
+    <h2><span class="num">03</span> Fases e posts dia a dia</h2>
+    <p class="intro">Cada fase tem a sua cor, e cada dia de post aparece separado. Os textos são sugestões; o final é da Kamari.</p>
+    <div class="phase p1">
+      <div class="phase-head"><span class="code">Fase 1</span><h3>Antecipação · 12 a 18/11</h3></div>
+      <p class="goal">Teaser, votação no VIP, data e benefício. Sem preço antes de 15/11.</p>
+      <div class="day">
+        <div class="top"><span class="date">12/11 · Qui</span><span class="title">Teaser 1</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Imagem com "tem novidade chegando", sem revelar nada.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Caixinha: "o que você acha que é?"</li><li>Bastidor do showroom, sem produto identificado.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Aviso: "tem campanha vindo, vocês ficam sabendo primeiro".</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">13/11 · Sex</span><span class="title">Votação do nome</span></div>
+        <p class="muted-line">Sem post no feed hoje. Só stories.</p>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "quem está no grupo já sabe: tem campanha vindo". CTA: entre no grupo VIP.</li><li>Enquete: "vai ser desconto ou lançamento?"</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Votação: 2 ou 3 nomes para a campanha.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">14/11 · Sáb</span><span class="title">Votação dos modelos</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Revelação: no grupo VIP rolou a votação de modelos com desconto extra.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "o grupo escolheu o nome". Amanhã vocês ficam sabendo. CTA: entre no grupo VIP.</li><li>Contagem: "dia 19, às 12h".</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Votação: 2 ou 3 modelos com desconto extra e cupom exclusivo do VIP.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">15/11 · Dom</span><span class="title">Data, benefício e nome</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Nome da campanha revelado, com "dia 19, às 12h" e o desconto progressivo de 10%, 20% e 30%.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "o grupo também escolheu os modelos com desconto extra". CTA: entre no grupo VIP.</li><li>Mostrar a faixa de Pix: +5%.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Resultado da votação de modelos, com a regra do cupom.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">16/11 · Seg</span><span class="title">Como funciona</span></div>
+        <p class="muted-line">Sem post no feed hoje. Só stories.</p>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "o cupom do VIP é só para quem está no grupo". CTA: entre no grupo VIP.</li><li>Enquete: "quantos pares você quer?"</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Detalhe da conta do Pix, passo a passo.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">17/11 · Ter</span><span class="title">Como comprar</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Reel: passo a passo de compra no site.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "o Pix soma mais 5%". CTA: entre no grupo VIP.</li><li>Print do passo a passo, com CTA para o site.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Tutorial de compra, antes do público.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">18/11 · Qua</span><span class="title">Véspera</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>"Amanhã, 12h", com a data em destaque.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "o tutorial está no grupo". CTA: entre no grupo VIP.</li><li>Contagem regressiva.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Senha KAMARIVIP liberada às 18h, para o acesso antecipado.</li></ul></div>
+      </div>
+    </div>
+    <div class="phase p2">
+      <div class="phase-head"><span class="code">Fase 2</span><h3>Black Friday · 19 a 23/11</h3></div>
+      <p class="goal">Oferta completa no site, com extensão no dia 23 até meia-noite. Extensão apresentada como pedido do público.</p>
+      <div class="day">
+        <div class="top"><span class="date">19/11 · Qui</span><span class="title">Abertura</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Black aberta: oferta completa do site.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "quem entrou com a senha já está comprando". CTA: entre no grupo VIP.</li><li>10% no 1º par, 20% no 2º, 30% no 3º. Pix soma mais 5%.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Pedido: clientes que já compraram, mandem o print do tênis.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">20/11 · Sex</span><span class="title">Dia 2 (feriado)</span></div>
+        <p class="muted-line">Sem post no feed hoje. Só stories.</p>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "as clientes mandaram o print do que compraram" (com autorização). CTA: entre no grupo VIP.</li><li>Grade dos tamanhos que estão acabando.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Aviso dos tamanhos que acabam hoje.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">21/11 · Sáb</span><span class="title">Dia 3</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Reel com um pedido de cliente (com autorização).</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "os tamanhos que estão acabando". CTA: entre no grupo VIP.</li><li>Caixinha: "qual par você levaria?"</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Pergunta de qual par cada VIP compraria.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">22/11 · Dom</span><span class="title">Dia 4</span></div>
+        <p class="muted-line">Sem post no feed hoje. Só stories.</p>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "qual par você levaria". Veja a resposta do grupo. CTA: entre no grupo VIP.</li><li>"O público pediu mais um dia".</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Aviso: a extensão é para o VIP primeiro.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">23/11 · Seg</span><span class="title">Extensão</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Extensão até meia-noite.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "a extensão é para o VIP primeiro". CTA: entre no grupo VIP.</li><li>Contagem para meia-noite.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Último aviso: a Black acaba hoje à meia-noite.</li></ul></div>
+      </div>
+    </div>
+    <div class="phase p3">
+      <div class="phase-head"><span class="code">Fase 3</span><h3>Pós-Black · 24 a 29/11</h3></div>
+      <p class="goal">Reposição, modelos novos e frete grátis no fim de semana. Nenhum desconto de produto.</p>
+      <div class="day">
+        <div class="top"><span class="date">24/11 · Ter</span><span class="title">Pós-Black</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>"A Black acabou. O que vem agora?"</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "a Black acabou para o VIP também". CTA: entre no grupo VIP.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>O que chega primeiro: reposição dos mais vendidos.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">25/11 · Qua</span><span class="title">Reposição</span></div>
+        <p class="muted-line">Sem post no feed hoje. Só stories.</p>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "o que chega primeiro". CTA: entre no grupo VIP.</li><li>Vídeo da chegada das caixas.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Lista da reposição, antes do público.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">26/11 · Qui</span><span class="title">Modelos novos</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>New Balance 530 e 9060 em cores novas.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "a lista da reposição". CTA: entre no grupo VIP.</li><li>Enquete: "qual cor?"</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Prévia das cores.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">27/11 · Sex</span><span class="title">Nike VR3</span></div>
+        <p class="muted-line">Sem post no feed hoje. Só stories.</p>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "as cores que o grupo escolheu". CTA: entre no grupo VIP.</li><li>Teaser sem preço.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Aviso do frete grátis do fim de semana.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">28/11 · Sáb</span><span class="title">Frete grátis</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Fim de semana com frete grátis no site.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "o frete grátis". CTA: entre no grupo VIP.</li><li>"Frete grátis até segunda".</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Frete grátis já ativo para o VIP.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">29/11 · Dom</span><span class="title">Último dia do frete</span></div>
+        <p class="muted-line">Sem post no feed hoje. Só stories.</p>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "o frete grátis acaba amanhã". CTA: entre no grupo VIP.</li><li>Contagem para o fim do frete.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Encerramento do frete grátis.</li></ul></div>
+      </div>
+    </div>
+    <div class="phase p4">
+      <div class="phase-head"><span class="code">Fase 4</span><h3>Ressaca e Story Shop · 30/11 a 4/12</h3></div>
+      <p class="goal">Story Shop com janela de 24 horas (3/12, 12h, até 4/12, 12h). Atendimento só nos stories no ar, por ordem de chegada.</p>
+      <div class="day">
+        <div class="top"><span class="date">30/11 · Seg</span><span class="title">Ressaca</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>"Obrigada por essa Black".</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "o grupo perguntou se o Story Shop vai acontecer". CTA: entre no grupo VIP.</li><li>"A gente quer presentear mais uma vez".</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Aviso: tem Story Shop, vocês saem na frente.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">01/12 · Ter</span><span class="title">Aquecimento</span></div>
+        <p class="muted-line">Sem post no feed hoje. Só stories.</p>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "tem Story Shop". CTA: entre no grupo VIP.</li><li>Contagem: "dia 3, às 12h".</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Lista de produtos sai amanhã cedo.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">02/12 · Qua</span><span class="title">Véspera</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>"Amanhã, 12h": Story Shop.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "a lista de produtos". CTA: entre no grupo VIP.</li><li>Aquecimento sem preço.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Lista de produtos, antes do público.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">03/12 · Qui</span><span class="title">Story Shop começa</span></div>
+        <div class="ch"><span class="ch-label">Feed</span><ul><li>Story Shop aberto. Exceção à regra de intercalar: dia de abertura.</li></ul></div>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>3 a 4 stories por produto: foto, detalhe, grade e chamada.</li><li>Último story: "comente 'eu quero'" ou "envie no direct".</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Lista e link, às 11h.</li></ul></div>
+      </div>
+      <div class="day">
+        <div class="top"><span class="date">04/12 · Sex</span><span class="title">Último dia</span></div>
+        <p class="muted-line">Sem post no feed hoje. Só stories.</p>
+        <div class="ch"><span class="ch-label">Stories</span><ul><li>Baseado no VIP de ontem: "a lista de produtos e o link". CTA: entre no grupo VIP.</li><li>Lembrete e atendimento até 12h.</li></ul></div>
+        <div class="ch"><span class="ch-label vip">Grupo VIP (sugestão)</span><ul><li>Fechamento do Story Shop.</li></ul></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="ico">A</div>
+      <div><h4>Story Shop: regras</h4><p>Produto: só o que a marca quer mandar embora. Lançamento não entra. Grade e unidades escritas no story. Atendimento por ordem de chegada, durante os stories no ar. Pagamento por link ou Pix, enviado no direct, com comprovante. Sem passar pelo site.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">B</div>
+      <div><h4>Dezembro</h4><p>Brinde em compras feitas após 4/12, anunciado depois do dia 4. Compra premiada: no fim do mês, uma compra é devolvida, sorteada para evitar prejuízo. Sem campanha masculina; unissex com numeração na página.</p></div>
+    </div>
+  <section id="s4">
+    <h2><span class="num">04</span> Para a equipe do site (Flix)</h2>
+    <table>
+      <thead><tr><th>Data</th><th>O que fazer</th></tr></thead>
+      <tbody>
+        <tr><td>11/11</td><td>Ocultar a categoria de 50% off, conforme decidido. Remover o cupom de primeira compra.</td></tr>
+        <tr><td>12/11</td><td>Corrigir banner de parcelamento: 2 vezes sem juros; até 12 vezes no cartão, com juros. Instalar Google Analytics.</td></tr>
+        <tr><td>14/11</td><td>Cupom exclusivo do VIP para os modelos votados, ativo no dia 14 (a confirmar).</td></tr>
+        <tr><td>18/11</td><td>Página de acesso antecipado com senha, liberada às 18h só para o VIP. Senha fora dos stories.</td></tr>
+        <tr><td>19/11</td><td>Virada às 12h: oferta ativa em todo o site (a confirmar). Teste de checkout, frete e Pix no celular antes do horário.</td></tr>
+        <tr><td>20/11</td><td>Feriado: confirmar quem monitora o site e responde às dúvidas.</td></tr>
+        <tr><td>23/11</td><td>Encerrar a oferta à meia-noite.</td></tr>
+        <tr><td>27/11</td><td>Preparar a lista de produtos do Story Shop, com estoque e grade (vem da Kamari).</td></tr>
+        <tr><td>03/12</td><td>Story Shop: produtos não aparecem no site. Site em modo normal.</td></tr>
+        <tr><td>05/12 em diante</td><td>Brinde no pedido de dezembro, conforme a regra definida.</td></tr>
+      </tbody>
+    </table>
+  <section id="s5">
+    <h2><span class="num">05</span> Para a equipe de tráfego (Flix)</h2>
+    <p class="intro">Orçamento ainda não definido. Os anúncios são de alcance e tráfego até validarmos o checkout e o Google Analytics.</p>
+    <table>
+      <thead><tr><th>Período</th><th>Anúncio no ar</th><th>Público e objetivo</th></tr></thead>
+      <tbody>
+        <tr><td>11/11 a 14/11</td><td>Criativos já postados pela Kamari, direcionados ao perfil e ao site</td><td>Visitantes do perfil e do site (30, 60 e 90 dias). Alcance</td></tr>
+        <tr><td>15/11 a 17/11</td><td>Save the date: "dia 19, às 12h"</td><td>Mesmo público, alcance</td></tr>
+        <tr><td>18/11</td><td>Save the date, igual aos dias anteriores. Sem anúncio específico</td><td>Mesmo público de alcance</td></tr>
+        <tr><td>19/11 a 23/11</td><td>Oferta da Black e extensão no dia 23</td><td>Visitantes e público quente. Conversão só com o checkout validado</td></tr>
+        <tr><td>24/11 a 29/11</td><td>Vídeos dos modelos mais vendidos e criativos de prova social (pessoas comprando)</td><td>Perfil, alcance e público quente</td></tr>
+        <tr><td>30/11 a 03/12</td><td>Save the date do Story Shop</td><td>Mesmo público de alcance</td></tr>
+        <tr><td>04/12 em diante</td><td>Mantém os criativos de 24 a 29/11 (modelos mais vendidos e prova social). Verba pequena para o site</td><td>Perfil e acesso ao site</td></tr>
+      </tbody>
+    </table>
+  <section id="s6">
+    <h2><span class="num">06</span> Dever de casa da Kamari</h2>
+    <ul class="checklist">
+      <li>☐ Confirmar a oferta da Black e a margem com a Flix. <b>Prazo:</b> 12/11.</li>
+      <li>☐ Confirmar se a oferta vale para o site inteiro. <b>Prazo:</b> 12/11.</li>
+      <li>☐ Instalar o Google Analytics. <b>Prazo:</b> 12/11.</li>
+      <li>☐ Pedido aos fornecedores: novos modelos e reposição. <b>Prazo:</b> 13/11.</li>
+      <li>☐ Votação no VIP: nomes da campanha (2 ou 3 opções). <b>Prazo:</b> 13/11.</li>
+      <li>☐ Votação no VIP: modelos com desconto extra e cupom. <b>Prazo:</b> 13/11.</li>
+      <li>☐ Autorização das clientes para usar o print da compra. <b>Prazo:</b> 19/11.</li>
+      <li>☐ Fotos e grade do Story Shop, com número de unidades por produto. <b>Prazo:</b> 27/11.</li>
+      <li>☐ Brinde de dezembro: item, custo e quantidade. <b>Prazo:</b> 27/11.</li>
+      <li>☐ Quem atende os stories nos dias 3 e 4/12. <b>Prazo:</b> 27/11.</li>
+    </ul>
+  <section id="s7">
+    <h2><span class="num">07</span> Pontos de atenção</h2>
+    <p class="intro">Pontos que precisam de decisão, não de execução.</p>
+    <div class="card">
+      <div class="ico">!</div>
+      <div><h4>Descontos empilhados</h4><p>Progressivo de 10%, 20% e 30%, Pix de 5% a mais em cada faixa (15%, 25% e 35%), frete grátis e Story Shop com 60% a 70%. Nenhuma conta de margem foi feita. Antes de publicar qualquer número, a margem de cada faixa precisa estar fechada.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">!</div>
+      <div><h4>Atendimento do Story Shop</h4><p>O atendimento acontece só nos stories no ar, por ordem de chegada. Sem estoque por produto atualizado em tempo real, a marca vai vender o que não tem. Precisa de limite por produto e de quem responde.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">!</div>
+      <div><h4>Corte do 50% off</h4><p>A categoria de 50% off é parte das vendas de hoje. Ocultar agora pode derrubar faturamento antes da Black. Decidir a data de corte.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">?</div>
+      <div><h4>Abrangência da oferta</h4><p>A oferta da Black já está definida, mas se vale para o site inteiro ainda precisa ser confirmado.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">?</div>
+      <div><h4>Dados do case</h4><p>O número de 13 mil em 22 dias veio de um relatório do suporte e não diz se é só site ou site mais showroom. Não usar como case antes de confirmar.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">!</div>
+      <div><h4>Prazo</h4><p>A Black começa em 8 dias. Se a oferta não fechar até 13/11, a antecipação de 15/11 não tem o que anunciar.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">!</div>
+      <div><h4>Compra premiada</h4><p>Sorteio com compra devolvida exige regras claras e revisão jurídica antes de divulgar.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">!</div>
+      <div><h4>Senha KAMARIVIP</h4><p>Senha fácil de adivinhar e fácil de vazar com print. Sugiro senha diferente a cada campanha, enviada só no grupo VIP e liberada apenas no horário.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">!</div>
+      <div><h4>Print das clientes</h4><p>O print da compra pode mostrar nome, endereço e cartão. Usar só com autorização e corte. Sem autorização, a clienta não aparece.</p></div>
+    </div>
+    <div class="card">
+      <div class="ico">?</div>
+      <div><h4>Venpavo</h4><p>A ferramenta de link de pagamento citada na conversa não está clara para mim. Confirmar antes de criar o processo do Story Shop.</p></div>
+    </div>
+  <div class="closing">
+    <h2>Dúvidas, a gente conversa</h2>
+    <p>Este documento é o rascunho para a reunião de 26/11. Os números de margem ainda precisam ser fechados.</p>
+  </div>
+
+  <footer>FLIX · PLANEJAMENTO · KAMARI · VERSÃO PRELIMINAR</footer>
+
+</div>
+</body>
+</html>
